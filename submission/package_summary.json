@@ -1,0 +1,19 @@
+{
+  "archive": "submission/CSE425_GNN_BERT_Kazi_Salman_Salim_Miskatul_Afrin_Anika.zip",
+  "archive_sha256": "ffdc36724e96e214bdc8b63bd84df048fc5fa7d01423e570f172b32b7d490966",
+  "included_project_files": 797,
+  "uncompressed_project_bytes": 19103903,
+  "archive_bytes": 16048050,
+  "graph_samples": {
+    "gtzan": 20,
+    "mtat": 20,
+    "musiccaps": 650
+  },
+  "large_checkpoints_excluded": [
+    "task1_best.pt",
+    "task3_bert_only_best.pt",
+    "task3_concat_best.pt",
+    "task3_cross_attention_best.pt",
+    "task4_contrastive_best.pt"
+  ]
+}

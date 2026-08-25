@@ -1,0 +1,683 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "required core artifacts",
+      "passed": true,
+      "detail": {
+        "missing": []
+      }
+    },
+    {
+      "check": "notebook JSON: eda.ipynb",
+      "passed": true,
+      "detail": {
+        "cells": 10,
+        "nbformat": 4
+      }
+    },
+    {
+      "check": "notebook JSON: demo_context.ipynb",
+      "passed": true,
+      "detail": {
+        "cells": 5,
+        "nbformat": 4
+      }
+    },
+    {
+      "check": "MusicCaps split ID overlap",
+      "passed": true,
+      "detail": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      }
+    },
+    {
+      "check": "GTZAN exact-audio cross-split duplicates",
+      "passed": true,
+      "detail": {
+        "track_id_overlap": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "exact_audio_duplicate_groups": 14,
+        "cross_split_exact_audio_duplicate_groups": 0,
+        "hash_algorithm": "SHA-256 over source WAV bytes"
+      }
+    },
+    {
+      "check": "MTAT clip/exact-song overlap",
+      "passed": true,
+      "detail": {
+        "protocol": "official MTAT shards: 0-b train, c validation, d-f test",
+        "counts": {
+          "train": 18709,
+          "val": 1825,
+          "test": 5329
+        },
+        "shards": {
+          "train": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "a",
+            "b"
+          ],
+          "val": [
+            "c"
+          ],
+          "test": [
+            "d",
+            "e",
+            "f"
+          ]
+        },
+        "duplicate_clip_ids_within_split": {
+          "train": 0,
+          "val": 0,
+          "test": 0
+        },
+        "clip_overlap": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "artist_overlap": {
+          "train_val": 13,
+          "train_test": 45,
+          "val_test": 8
+        },
+        "exact_song_tuple_overlap": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        }
+      }
+    },
+    {
+      "check": "60 sampled real graphs",
+      "passed": true,
+      "detail": [
+        {
+          "path": "data/processed/gtzan_graphs/blues.00000.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00001.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00002.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00003.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00004.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00005.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00006.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00007.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00008.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00009.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00010.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00011.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00012.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00013.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00014.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00015.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00016.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00017.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00018.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/gtzan_graphs/blues.00019.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10009.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10011.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10015.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10019.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10022.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10024.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10025.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10026.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10027.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10028.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10029.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10034.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10036.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10038.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10042.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10045.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10048.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10050.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/mtat_graphs/10053.pt",
+          "nodes": 6,
+          "features": 77,
+          "edges": 16,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-0Gj8-vB1q4.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-0vPFx-wRRI.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-1OlgJWehn8.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-1UWSisR2zo.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-3Kv4fdm7Uk.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-4SYC2YgzL8.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-5FoeegAgvU.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-6HBGg1cAI0.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-7B9tPuIP-w.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-88me9bBzrk.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-8C-gydUbR8.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-_6RxZyi30Q.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-_OzT7Xyvok.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-cQ-jUTEgck.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-O9mnfC61Ac.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-v5hgCh3M2w.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-XN0NtrnfMY.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/-zOybsEdM5E.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/01hjVJN9xCg.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        },
+        {
+          "path": "data/processed/musiccaps_graphs/06Brdf83RZE.pt",
+          "nodes": 5,
+          "features": 77,
+          "edges": 13,
+          "finite": true
+        }
+      ]
+    },
+    {
+      "check": "Task 1 held-out metrics",
+      "passed": true,
+      "detail": {
+        "num_samples": 2858,
+        "num_tags": 191,
+        "macro_f1": 0.2863323313156807,
+        "micro_f1": 0.39997958767095326,
+        "mean_auc_pr": 0.2978998362733808
+      }
+    },
+    {
+      "check": "Task 2 clean-split metrics",
+      "passed": true,
+      "detail": {
+        "expected_split": {
+          "train": 797,
+          "val": 99,
+          "test": 103
+        }
+      }
+    },
+    {
+      "check": "Task 3 four-way held-out metrics",
+      "passed": true,
+      "detail": {
+        "modes": [
+          "bert_only",
+          "concat",
+          "cross_attention",
+          "gnn_only"
+        ]
+      }
+    },
+    {
+      "check": "Task 4 held-out retrieval and examples",
+      "passed": true,
+      "detail": {
+        "split_counts": {
+          "train": 364,
+          "val": 89,
+          "test": 93
+        },
+        "caption_to_audio": {
+          "R@1": 0.02150537632405758,
+          "R@5": 0.09677419066429138,
+          "R@10": 0.17204301059246063
+        },
+        "audio_to_caption": {
+          "R@1": 0.04301075264811516,
+          "R@5": 0.13978494703769684,
+          "R@10": 0.2150537669658661
+        },
+        "qualitative_examples": 10,
+        "experiment_version": "task4-musiccaps-real-audio-v2",
+        "requested_ranges": {
+          "train": {
+            "start": 0,
+            "limit": 400
+          },
+          "val": {
+            "start": 0,
+            "limit": 100
+          },
+          "test": {
+            "start": 200,
+            "limit": 100
+          }
+        }
+      }
+    },
+    {
+      "check": "faculty plots",
+      "passed": true,
+      "detail": [
+        {
+          "file": "task1_f1_curves.png",
+          "width": 1381,
+          "height": 878
+        },
+        {
+          "file": "task2_model_comparison.png",
+          "width": 1381,
+          "height": 877
+        },
+        {
+          "file": "task2_gnn_confusion_matrix.png",
+          "width": 1324,
+          "height": 1216
+        },
+        {
+          "file": "task2_cnn_confusion_matrix.png",
+          "width": 1341,
+          "height": 1216
+        },
+        {
+          "file": "task3_ablation_macro_f1.png",
+          "width": 1381,
+          "height": 878
+        },
+        {
+          "file": "task3_ablation_auc_pr.png",
+          "width": 1381,
+          "height": 878
+        },
+        {
+          "file": "task3_per_tag_metrics.png",
+          "width": 2181,
+          "height": 1075
+        },
+        {
+          "file": "task3_tsne_genre.png",
+          "width": 1378,
+          "height": 1178
+        },
+        {
+          "file": "task3_tsne_mood.png",
+          "width": 1378,
+          "height": 1178
+        },
+        {
+          "file": "task3_musiccaps_case_studies.png",
+          "width": 2968,
+          "height": 2161
+        },
+        {
+          "file": "task3_architecture.png",
+          "width": 2838,
+          "height": 1122
+        },
+        {
+          "file": "task4_learning_curve.png",
+          "width": 1620,
+          "height": 684
+        },
+        {
+          "file": "task4_retrieval_recall.png",
+          "width": 1440,
+          "height": 720
+        }
+      ]
+    },
+    {
+      "check": "report page count",
+      "passed": true,
+      "detail": {
+        "pages": 7,
+        "required": "6-10"
+      }
+    }
+  ]
+}
