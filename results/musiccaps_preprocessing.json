@@ -1,0 +1,24 @@
+{
+  "preprocessing_version": "musiccaps-rich77-2s-v1",
+  "preprocessing_signature": "7add74fcdf6fbeafb77cc5ebe34d5f359fc5829e80c51803e8a7883d0a799911",
+  "preprocessing_settings": {
+    "sample_rate": 22050,
+    "window_sec": 2.0,
+    "hop_length": 512,
+    "n_fft": 2048,
+    "feature_dim": 77,
+    "normalize": true,
+    "tau": 0.5,
+    "temporal_edges": true,
+    "self_loops": true,
+    "directed": false
+  },
+  "requested_available_audio": 650,
+  "successful": 650,
+  "cached": 578,
+  "failed": 0,
+  "failures": [],
+  "feature_dim": 77,
+  "window_sec": 2.0,
+  "elapsed_seconds": 6.4199323654174805
+}

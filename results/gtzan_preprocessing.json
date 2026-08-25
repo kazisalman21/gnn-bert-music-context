@@ -1,0 +1,49 @@
+{
+  "preprocessing_version": "gtzan-rich77-mel128-5s-v1",
+  "preprocessing_signature": "14c556a80e59ea3f1b7f8572b223b02ea0b3f58565bb98e695f108dbde853a24",
+  "preprocessing_settings": {
+    "sample_rate": 22050,
+    "window_sec": 5.0,
+    "hop_length": 512,
+    "n_fft": 2048,
+    "mel_bins": 128,
+    "feature_dim": 77,
+    "normalize": true,
+    "tau": 0.5,
+    "temporal_edges": true,
+    "self_loops": true,
+    "directed": false
+  },
+  "requested": 1000,
+  "successful": 999,
+  "cached": 999,
+  "failed": 1,
+  "failures": [
+    {
+      "track_id": "jazz.00054",
+      "error": "LibsndfileError: Error opening 'E:\\\\coding\\\\CSE425\\\\data\\\\raw\\\\gtzan\\\\Data\\\\genres_original\\\\jazz\\\\jazz.00054.wav': Format not recognised."
+    }
+  ],
+  "graph_feature_dim": 77,
+  "mel_bins": 128,
+  "window_sec": 5.0,
+  "node_count_distribution": {
+    "6": 999
+  },
+  "split_counts": {
+    "train": 797,
+    "val": 99,
+    "test": 103
+  },
+  "split_audit": {
+    "track_id_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "exact_audio_duplicate_groups": 14,
+    "cross_split_exact_audio_duplicate_groups": 0,
+    "hash_algorithm": "SHA-256 over source WAV bytes"
+  },
+  "elapsed_seconds": 41.028584003448486
+}

@@ -1,0 +1,55 @@
+{
+  "preprocessing_version": "mtat-rich77-5s-v1",
+  "preprocessing_signature": "5f16e197dc546923c56c8875c2a80653a229ce83c06993ba9d3571e4e55e73fe",
+  "preprocessing_settings": {
+    "sample_rate": 22050,
+    "window_sec": 5.0,
+    "hop_length": 512,
+    "n_fft": 2048,
+    "feature_dim": 77,
+    "normalize": true,
+    "tau": 0.5,
+    "temporal_edges": true,
+    "self_loops": true,
+    "directed": false
+  },
+  "requested": 25863,
+  "successful": 25860,
+  "cached": 25860,
+  "failed": 3,
+  "failures": [
+    {
+      "clip_id": 35644,
+      "error": "FileNotFoundError: missing or empty audio: E:\\coding\\CSE425\\data\\raw\\magnatagatune\\6\\norine_braun-now_and_zen-08-gently-117-146.mp3"
+    },
+    {
+      "clip_id": 55753,
+      "error": "FileNotFoundError: missing or empty audio: E:\\coding\\CSE425\\data\\raw\\magnatagatune\\8\\jacob_heringman-josquin_des_prez_lute_settings-19-gintzler__pater_noster-204-233.mp3"
+    },
+    {
+      "clip_id": 57881,
+      "error": "FileNotFoundError: missing or empty audio: E:\\coding\\CSE425\\data\\raw\\magnatagatune\\9\\american_baroque-dances_and_suites_of_rameau_and_couperin-25-le_petit_rien_xiveme_ordre_couperin-88-117.mp3"
+    }
+  ],
+  "sample_rate": 22050,
+  "window_sec": 5.0,
+  "feature_dim": 77,
+  "tau": 0.5,
+  "node_count_distribution": {
+    "6": 25860
+  },
+  "edge_count_distribution": {
+    "16": 24204,
+    "18": 1486,
+    "20": 145,
+    "22": 22,
+    "24": 1,
+    "28": 2
+  },
+  "usable_by_split": {
+    "test": 5329,
+    "val": 1825,
+    "train": 18706
+  },
+  "elapsed_seconds": 170.57092189788818
+}
