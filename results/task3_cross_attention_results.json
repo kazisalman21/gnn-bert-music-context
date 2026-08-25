@@ -1,0 +1,268 @@
+{
+  "mode": "cross_attention",
+  "best_validation_macro_f1_at_0.5": 0.3344916858544737,
+  "threshold_tuned_on_validation": 0.7500000000000002,
+  "test_loss": 0.7566664314695767,
+  "test_metrics": {
+    "macro_f1": 0.3786161444820097,
+    "micro_f1": 0.4444444444444444,
+    "macro_precision": 0.33914049515033035,
+    "macro_recall": 0.46104422170265513,
+    "micro_precision": 0.3965475322149283,
+    "micro_recall": 0.5055013172167984,
+    "mean_auc_pr": 0.35452833805711653,
+    "threshold": 0.7500000000000002,
+    "num_samples": 5329,
+    "num_tags": 19,
+    "per_tag": [
+      {
+        "tag": "classical",
+        "f1": 0.6150091519219036,
+        "auc_pr": 0.6103129637653529,
+        "support": 699
+      },
+      {
+        "tag": "techno",
+        "f1": 0.5845410628019324,
+        "auc_pr": 0.6120608601802918,
+        "support": 598
+      },
+      {
+        "tag": "electronic",
+        "f1": 0.4954128440366973,
+        "auc_pr": 0.4662233181090841,
+        "support": 496
+      },
+      {
+        "tag": "rock",
+        "f1": 0.6411411411411412,
+        "auc_pr": 0.7250971320689862,
+        "support": 564
+      },
+      {
+        "tag": "pop",
+        "f1": 0.38731218697829717,
+        "auc_pr": 0.3617631760687373,
+        "support": 196
+      },
+      {
+        "tag": "country",
+        "f1": 0.1330049261083744,
+        "auc_pr": 0.12021380976689337,
+        "support": 67
+      },
+      {
+        "tag": "metal",
+        "f1": 0.421978021978022,
+        "auc_pr": 0.37462948342939484,
+        "support": 165
+      },
+      {
+        "tag": "indian",
+        "f1": 0.43023255813953487,
+        "auc_pr": 0.3995249451464939,
+        "support": 174
+      },
+      {
+        "tag": "opera",
+        "f1": 0.5985699693564862,
+        "auc_pr": 0.6003079748888888,
+        "support": 373
+      },
+      {
+        "tag": "new age",
+        "f1": 0.21019108280254778,
+        "auc_pr": 0.12781301975871917,
+        "support": 148
+      },
+      {
+        "tag": "dance",
+        "f1": 0.4009546539379475,
+        "auc_pr": 0.3350115740307145,
+        "support": 153
+      },
+      {
+        "tag": "classic",
+        "f1": 0.23076923076923078,
+        "auc_pr": 0.1385365539626514,
+        "support": 110
+      },
+      {
+        "tag": "slow",
+        "f1": 0.3810909090909091,
+        "auc_pr": 0.3950655693163375,
+        "support": 806
+      },
+      {
+        "tag": "fast",
+        "f1": 0.3564356435643564,
+        "auc_pr": 0.34216516884084125,
+        "support": 495
+      },
+      {
+        "tag": "ambient",
+        "f1": 0.42183163737280294,
+        "auc_pr": 0.359794243258423,
+        "support": 508
+      },
+      {
+        "tag": "loud",
+        "f1": 0.32054794520547947,
+        "auc_pr": 0.2957529956722719,
+        "support": 273
+      },
+      {
+        "tag": "quiet",
+        "f1": 0.2704309063893016,
+        "auc_pr": 0.2019336815851962,
+        "support": 248
+      },
+      {
+        "tag": "soft",
+        "f1": 0.2482758620689655,
+        "auc_pr": 0.18871425933955857,
+        "support": 249
+      },
+      {
+        "tag": "weird",
+        "f1": 0.04597701149425287,
+        "auc_pr": 0.08111769389637827,
+        "support": 131
+      }
+    ]
+  },
+  "history": {
+    "mode": "cross_attention",
+    "epoch": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "phase": [
+      "bert_frozen",
+      "bert_frozen",
+      "bert_frozen",
+      "bert_frozen",
+      "bert_frozen",
+      "bert_frozen",
+      "partial_fine_tune",
+      "partial_fine_tune"
+    ],
+    "train_loss": [
+      0.9230632930229872,
+      0.7874760578840206,
+      0.736261995939108,
+      0.7116270672816497,
+      0.6899428469248307,
+      0.6749901868593998,
+      0.6771693812730984,
+      0.6733598452347975
+    ],
+    "val_loss": [
+      0.7662927814019032,
+      0.7265190818370917,
+      0.6978766077604049,
+      0.6978345008996817,
+      0.6809450288613638,
+      0.6855104764302572,
+      0.6896214607434396,
+      0.6859264962184124
+    ],
+    "val_macro_f1": [
+      0.29247462534887764,
+      0.3170020136052777,
+      0.31168860809013865,
+      0.32462804379980087,
+      0.32573900920145044,
+      0.3237715730257778,
+      0.3344916858544737,
+      0.32053729388826735
+    ],
+    "val_micro_f1": [
+      0.32194567994700485,
+      0.32762485429929167,
+      0.35026303204208514,
+      0.3574167507568113,
+      0.36687609434545265,
+      0.35240319128235065,
+      0.36446000205909607,
+      0.3529184009292421
+    ]
+  },
+  "training_time_seconds": 97.74660634994507,
+  "parameter_counts": {
+    "total": 66681363,
+    "trainable": 7406355
+  },
+  "provenance": {
+    "run_id": "20260825_185201",
+    "experiment_signature": "601c5f41c094363a1b580a5d679b46517066cf3638c9326ee5c8a3ed7fbd66f7",
+    "experiment_version": "task3-official-shards-rich77-v2",
+    "seed": 42,
+    "split_file_sha256": "9f99019a541f0002ffd8ae000a3957411a0c1ebd45e1e5799d48540960757599",
+    "split_counts": {
+      "train": 18706,
+      "val": 1825,
+      "test": 5329
+    },
+    "preprocessing_version": "mtat-rich77-5s-v1",
+    "preprocessing_signature": null,
+    "feature_dim": 77,
+    "target_tags": [
+      "classical",
+      "techno",
+      "electronic",
+      "rock",
+      "pop",
+      "country",
+      "metal",
+      "indian",
+      "opera",
+      "new age",
+      "dance",
+      "classic",
+      "slow",
+      "fast",
+      "ambient",
+      "loud",
+      "quiet",
+      "soft",
+      "weird"
+    ],
+    "bert": {
+      "model_name": "distilbert-base-uncased",
+      "max_length": 128,
+      "freeze": false,
+      "hidden_dim": 768
+    },
+    "gnn": {
+      "type": "GraphSAGE",
+      "hidden_dim": 128,
+      "num_layers": 2,
+      "dropout": 0.3,
+      "readout": "mean"
+    },
+    "fusion": {
+      "method": "cross_attention",
+      "projection_dim": 128,
+      "num_attention_heads": 4,
+      "dropout": 0.2
+    },
+    "training": {
+      "batch_size": 48,
+      "gnn_epochs": 50,
+      "frozen_epochs": 6,
+      "finetune_epochs": 2,
+      "gnn_learning_rate": 0.001,
+      "frozen_learning_rate": 0.0005,
+      "finetune_learning_rate": 2e-05,
+      "weight_decay": 0.0001
+    },
+    "mode": "cross_attention"
+  }
+}

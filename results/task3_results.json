@@ -1,0 +1,1421 @@
+{
+  "task": "Task 3: disjoint context-to-target GNN-BERT fusion on MTAT",
+  "dataset": "MagnaTagATune",
+  "context_tags": [
+    "guitar",
+    "strings",
+    "drums",
+    "piano",
+    "violin",
+    "vocal",
+    "synth",
+    "female",
+    "male",
+    "singing",
+    "vocals",
+    "no vocals",
+    "harpsichord",
+    "flute",
+    "woman",
+    "male vocal",
+    "no vocal",
+    "sitar",
+    "solo",
+    "man",
+    "choir",
+    "voice",
+    "male voice",
+    "female vocal",
+    "beats",
+    "harp",
+    "cello",
+    "no voice",
+    "female voice",
+    "choral",
+    "beat"
+  ],
+  "target_genre_tags": [
+    "classical",
+    "techno",
+    "electronic",
+    "rock",
+    "pop",
+    "country",
+    "metal",
+    "indian",
+    "opera",
+    "new age",
+    "dance",
+    "classic"
+  ],
+  "target_mood_tags": [
+    "slow",
+    "fast",
+    "ambient",
+    "loud",
+    "quiet",
+    "soft",
+    "weird"
+  ],
+  "split_counts": {
+    "train": 18706,
+    "val": 1825,
+    "test": 5329
+  },
+  "split_audit": {
+    "protocol": "official MTAT shards: 0-b train, c validation, d-f test",
+    "counts": {
+      "train": 18709,
+      "val": 1825,
+      "test": 5329
+    },
+    "shards": {
+      "train": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "a",
+        "b"
+      ],
+      "val": [
+        "c"
+      ],
+      "test": [
+        "d",
+        "e",
+        "f"
+      ]
+    },
+    "duplicate_clip_ids_within_split": {
+      "train": 0,
+      "val": 0,
+      "test": 0
+    },
+    "clip_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "artist_overlap": {
+      "train_val": 13,
+      "train_test": 45,
+      "val_test": 8
+    },
+    "exact_song_tuple_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    }
+  },
+  "leakage_statement": "Context and target tags are lexically disjoint. Both originate from the same annotation corpus, so indirect statistical associations remain.",
+  "results": {
+    "bert_only": {
+      "mode": "bert_only",
+      "best_validation_macro_f1_at_0.5": 0.2915521990536622,
+      "threshold_tuned_on_validation": 0.6500000000000001,
+      "test_loss": 0.9316715646002974,
+      "test_metrics": {
+        "macro_f1": 0.2812295491160282,
+        "micro_f1": 0.34847549685224044,
+        "macro_precision": 0.24816340256219627,
+        "macro_recall": 0.4030604576429088,
+        "micro_precision": 0.2895681608370089,
+        "micro_recall": 0.4374709437470944,
+        "mean_auc_pr": 0.25248182420391463,
+        "threshold": 0.6500000000000001,
+        "num_samples": 5329,
+        "num_tags": 19,
+        "per_tag": [
+          {
+            "tag": "classical",
+            "f1": 0.5885815185403178,
+            "auc_pr": 0.5652770257325571,
+            "support": 699
+          },
+          {
+            "tag": "techno",
+            "f1": 0.5366255144032922,
+            "auc_pr": 0.47733091758456814,
+            "support": 598
+          },
+          {
+            "tag": "electronic",
+            "f1": 0.49733570159857904,
+            "auc_pr": 0.4365360958712968,
+            "support": 496
+          },
+          {
+            "tag": "rock",
+            "f1": 0.390625,
+            "auc_pr": 0.3703813605641917,
+            "support": 564
+          },
+          {
+            "tag": "pop",
+            "f1": 0.2841993637327678,
+            "auc_pr": 0.26860865941257545,
+            "support": 196
+          },
+          {
+            "tag": "country",
+            "f1": 0.0910569105691057,
+            "auc_pr": 0.07997054960686814,
+            "support": 67
+          },
+          {
+            "tag": "metal",
+            "f1": 0.0,
+            "auc_pr": 0.1262005923309258,
+            "support": 165
+          },
+          {
+            "tag": "indian",
+            "f1": 0.3196125907990315,
+            "auc_pr": 0.32678455404837636,
+            "support": 174
+          },
+          {
+            "tag": "opera",
+            "f1": 0.45750595710881653,
+            "auc_pr": 0.39085959786067953,
+            "support": 373
+          },
+          {
+            "tag": "new age",
+            "f1": 0.20614035087719298,
+            "auc_pr": 0.09580607660993391,
+            "support": 148
+          },
+          {
+            "tag": "dance",
+            "f1": 0.27627627627627627,
+            "auc_pr": 0.23164535381551343,
+            "support": 153
+          },
+          {
+            "tag": "classic",
+            "f1": 0.209009009009009,
+            "auc_pr": 0.1338304503635835,
+            "support": 110
+          },
+          {
+            "tag": "slow",
+            "f1": 0.28755020080321286,
+            "auc_pr": 0.3272818794429969,
+            "support": 806
+          },
+          {
+            "tag": "fast",
+            "f1": 0.3128888888888889,
+            "auc_pr": 0.2675776415389286,
+            "support": 495
+          },
+          {
+            "tag": "ambient",
+            "f1": 0.29714285714285715,
+            "auc_pr": 0.23035423851026532,
+            "support": 508
+          },
+          {
+            "tag": "loud",
+            "f1": 0.18329938900203666,
+            "auc_pr": 0.11394004014684983,
+            "support": 273
+          },
+          {
+            "tag": "quiet",
+            "f1": 0.13262599469496023,
+            "auc_pr": 0.12005499538343647,
+            "support": 248
+          },
+          {
+            "tag": "soft",
+            "f1": 0.19693654266958424,
+            "auc_pr": 0.1609475318311726,
+            "support": 249
+          },
+          {
+            "tag": "weird",
+            "f1": 0.0759493670886076,
+            "auc_pr": 0.07376709921965884,
+            "support": 131
+          }
+        ]
+      },
+      "history": {
+        "mode": "bert_only",
+        "epoch": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "phase": [
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "partial_fine_tune",
+          "partial_fine_tune"
+        ],
+        "train_loss": [
+          0.9610388613664187,
+          0.8975967691494868,
+          0.8808700699072618,
+          0.8699348296874608,
+          0.8628513516523899,
+          0.8603788336118062,
+          0.8535988778640062,
+          0.8413740411782876
+        ],
+        "val_loss": [
+          0.8735978290056571,
+          0.8452292902347369,
+          0.8205297520527473,
+          0.8168247670699389,
+          0.8216197238518641,
+          0.8178735849184867,
+          0.810177804567875,
+          0.8028252017803681
+        ],
+        "val_macro_f1": [
+          0.2712567030842467,
+          0.2646941942600938,
+          0.28443079268600757,
+          0.2915521990536622,
+          0.28552409031717246,
+          0.28812104830116836,
+          0.28497464574880843,
+          0.2899874243262193
+        ],
+        "val_micro_f1": [
+          0.3127641589180051,
+          0.29300567107750475,
+          0.3107425412258126,
+          0.31214802896218824,
+          0.2997177798682973,
+          0.3110891089108911,
+          0.30834213305174235,
+          0.31282254863040887
+        ]
+      },
+      "training_time_seconds": 83.1693606376648,
+      "parameter_counts": {
+        "total": 66665491,
+        "trainable": 7390483
+      },
+      "provenance": {
+        "run_id": "20260825_185201",
+        "experiment_signature": "601c5f41c094363a1b580a5d679b46517066cf3638c9326ee5c8a3ed7fbd66f7",
+        "experiment_version": "task3-official-shards-rich77-v2",
+        "seed": 42,
+        "split_file_sha256": "9f99019a541f0002ffd8ae000a3957411a0c1ebd45e1e5799d48540960757599",
+        "split_counts": {
+          "train": 18706,
+          "val": 1825,
+          "test": 5329
+        },
+        "preprocessing_version": "mtat-rich77-5s-v1",
+        "preprocessing_signature": null,
+        "feature_dim": 77,
+        "target_tags": [
+          "classical",
+          "techno",
+          "electronic",
+          "rock",
+          "pop",
+          "country",
+          "metal",
+          "indian",
+          "opera",
+          "new age",
+          "dance",
+          "classic",
+          "slow",
+          "fast",
+          "ambient",
+          "loud",
+          "quiet",
+          "soft",
+          "weird"
+        ],
+        "bert": {
+          "model_name": "distilbert-base-uncased",
+          "max_length": 128,
+          "freeze": false,
+          "hidden_dim": 768
+        },
+        "gnn": {
+          "type": "GraphSAGE",
+          "hidden_dim": 128,
+          "num_layers": 2,
+          "dropout": 0.3,
+          "readout": "mean"
+        },
+        "fusion": {
+          "method": "cross_attention",
+          "projection_dim": 128,
+          "num_attention_heads": 4,
+          "dropout": 0.2
+        },
+        "training": {
+          "batch_size": 48,
+          "gnn_epochs": 50,
+          "frozen_epochs": 6,
+          "finetune_epochs": 2,
+          "gnn_learning_rate": 0.001,
+          "frozen_learning_rate": 0.0005,
+          "finetune_learning_rate": 2e-05,
+          "weight_decay": 0.0001
+        },
+        "mode": "bert_only"
+      }
+    },
+    "gnn_only": {
+      "mode": "gnn_only",
+      "best_validation_macro_f1_at_0.5": 0.2670993717060618,
+      "threshold_tuned_on_validation": 0.7000000000000002,
+      "test_loss": 0.960973058161991,
+      "test_metrics": {
+        "macro_f1": 0.29666144461703897,
+        "micro_f1": 0.35255591940944664,
+        "macro_precision": 0.23267125470292294,
+        "macro_recall": 0.43903642281180444,
+        "micro_precision": 0.27464545140089935,
+        "micro_recall": 0.49217418255075157,
+        "mean_auc_pr": 0.24422961505807442,
+        "threshold": 0.7000000000000002,
+        "num_samples": 5329,
+        "num_tags": 19,
+        "per_tag": [
+          {
+            "tag": "classical",
+            "f1": 0.47350620067643745,
+            "auc_pr": 0.43097667864403705,
+            "support": 699
+          },
+          {
+            "tag": "techno",
+            "f1": 0.47443006777572394,
+            "auc_pr": 0.44047101994230414,
+            "support": 598
+          },
+          {
+            "tag": "electronic",
+            "f1": 0.32918395573997233,
+            "auc_pr": 0.2323692737327037,
+            "support": 496
+          },
+          {
+            "tag": "rock",
+            "f1": 0.5704787234042553,
+            "auc_pr": 0.6174921735878991,
+            "support": 564
+          },
+          {
+            "tag": "pop",
+            "f1": 0.21727748691099477,
+            "auc_pr": 0.1441648172305936,
+            "support": 196
+          },
+          {
+            "tag": "country",
+            "f1": 0.11895910780669144,
+            "auc_pr": 0.06199600869638941,
+            "support": 67
+          },
+          {
+            "tag": "metal",
+            "f1": 0.43070362473347545,
+            "auc_pr": 0.3583065392901963,
+            "support": 165
+          },
+          {
+            "tag": "indian",
+            "f1": 0.09541984732824428,
+            "auc_pr": 0.08268154877446657,
+            "support": 174
+          },
+          {
+            "tag": "opera",
+            "f1": 0.5357466063348416,
+            "auc_pr": 0.457946969184827,
+            "support": 373
+          },
+          {
+            "tag": "new age",
+            "f1": 0.12121212121212122,
+            "auc_pr": 0.07418627042915198,
+            "support": 148
+          },
+          {
+            "tag": "dance",
+            "f1": 0.2617801047120419,
+            "auc_pr": 0.17280106093798409,
+            "support": 153
+          },
+          {
+            "tag": "classic",
+            "f1": 0.15932914046121593,
+            "auc_pr": 0.08757352896717424,
+            "support": 110
+          },
+          {
+            "tag": "slow",
+            "f1": 0.31521739130434784,
+            "auc_pr": 0.3057209149843712,
+            "support": 806
+          },
+          {
+            "tag": "fast",
+            "f1": 0.3185378590078329,
+            "auc_pr": 0.24532362776626565,
+            "support": 495
+          },
+          {
+            "tag": "ambient",
+            "f1": 0.4012490241998439,
+            "auc_pr": 0.3348595208574511,
+            "support": 508
+          },
+          {
+            "tag": "loud",
+            "f1": 0.30927835051546393,
+            "auc_pr": 0.2504161749676374,
+            "support": 273
+          },
+          {
+            "tag": "quiet",
+            "f1": 0.23684210526315788,
+            "auc_pr": 0.1581131410281324,
+            "support": 248
+          },
+          {
+            "tag": "soft",
+            "f1": 0.2,
+            "auc_pr": 0.12642820964131496,
+            "support": 249
+          },
+          {
+            "tag": "weird",
+            "f1": 0.06741573033707865,
+            "auc_pr": 0.058535207440513895,
+            "support": 131
+          }
+        ]
+      },
+      "history": {
+        "mode": "gnn_only",
+        "epoch": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32
+        ],
+        "phase": [
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full",
+          "full"
+        ],
+        "train_loss": [
+          1.0393520336884718,
+          0.9176608606790885,
+          0.8633456465525505,
+          0.8284907328776824,
+          0.8089183167005196,
+          0.7884429048269223,
+          0.7734913041958442,
+          0.7621140110187041,
+          0.7481481092098432,
+          0.7463736607478215,
+          0.7314958256024581,
+          0.7242112141389113,
+          0.7184067009351193,
+          0.7013322880634895,
+          0.7045777849661998,
+          0.6982391174022968,
+          0.6903576089021487,
+          0.6824604907861123,
+          0.6786700147084701,
+          0.6715601826325441,
+          0.670899190276097,
+          0.6645858466625214,
+          0.6586335870700005,
+          0.6583150250789447,
+          0.6530735835050925,
+          0.6576134390555896,
+          0.643087696035703,
+          0.6388719791021102,
+          0.6418567936389874,
+          0.6302956291498282,
+          0.6342888553937276,
+          0.6266661474337945
+        ],
+        "val_loss": [
+          0.9569831245984787,
+          0.9125220454656161,
+          0.8959078399034647,
+          0.8676106792229873,
+          0.8550985524287591,
+          0.8601475571974729,
+          0.856656109675383,
+          0.8453556635440924,
+          0.8847599449830178,
+          0.8570161591737698,
+          0.8601276354912,
+          0.8818877048981495,
+          0.871362737356088,
+          0.8806075010544214,
+          0.8788834122511057,
+          0.8868165956093714,
+          0.8884722911394559,
+          0.9247550796239804,
+          0.9081654189488827,
+          0.9313428073357313,
+          0.9082022668459476,
+          0.9132376450758714,
+          0.9541447460651398,
+          0.930529073262826,
+          0.9394278037242401,
+          0.9332582385112078,
+          0.9250088876638657,
+          0.9658451485328186,
+          0.942824547107403,
+          0.9802973323907608,
+          0.9798631477050292,
+          0.9563828294093792
+        ],
+        "val_macro_f1": [
+          0.18704811445557065,
+          0.22363383454136673,
+          0.2273828193304966,
+          0.24369624278234545,
+          0.241774415306749,
+          0.24284751143999053,
+          0.25293090049447,
+          0.250561650046704,
+          0.252210663403911,
+          0.2534988344514741,
+          0.25847547450017316,
+          0.25160392282292593,
+          0.2555698674736086,
+          0.25894366076540504,
+          0.2596995544839745,
+          0.2563488286190313,
+          0.2570683030282233,
+          0.25677405798211367,
+          0.26563890920209077,
+          0.2620933023799419,
+          0.26315891783772466,
+          0.2641106281021652,
+          0.2625489068873938,
+          0.2670993717060618,
+          0.26349147475563633,
+          0.26165207313816286,
+          0.26301709769591364,
+          0.25906747485210363,
+          0.26131024682491705,
+          0.2637468221754821,
+          0.26021354150136955,
+          0.2641900821503724
+        ],
+        "val_micro_f1": [
+          0.2419863171650396,
+          0.2661758691206544,
+          0.2622566267886465,
+          0.28207722137919405,
+          0.28123174497204373,
+          0.283249581239531,
+          0.29447408881251697,
+          0.28637452927079765,
+          0.2832454851810248,
+          0.2888640082680217,
+          0.2941333096653945,
+          0.28782158222846604,
+          0.2952029520295203,
+          0.29769126301493887,
+          0.2961552412042075,
+          0.29439543793994477,
+          0.2919655667144907,
+          0.29127767404641236,
+          0.30415347364499906,
+          0.30168855534709194,
+          0.3014327700220426,
+          0.30255366395262767,
+          0.29637681159420287,
+          0.3055244494214259,
+          0.30205822362321527,
+          0.2986607961841864,
+          0.30540946656649137,
+          0.29970411377302664,
+          0.2997004867090977,
+          0.30722597047032363,
+          0.3044319721308303,
+          0.3071718538565629
+        ]
+      },
+      "training_time_seconds": 129.51562976837158,
+      "parameter_counts": {
+        "total": 62739,
+        "trainable": 62739
+      },
+      "provenance": {
+        "run_id": "20260825_185201",
+        "experiment_signature": "601c5f41c094363a1b580a5d679b46517066cf3638c9326ee5c8a3ed7fbd66f7",
+        "experiment_version": "task3-official-shards-rich77-v2",
+        "seed": 42,
+        "split_file_sha256": "9f99019a541f0002ffd8ae000a3957411a0c1ebd45e1e5799d48540960757599",
+        "split_counts": {
+          "train": 18706,
+          "val": 1825,
+          "test": 5329
+        },
+        "preprocessing_version": "mtat-rich77-5s-v1",
+        "preprocessing_signature": null,
+        "feature_dim": 77,
+        "target_tags": [
+          "classical",
+          "techno",
+          "electronic",
+          "rock",
+          "pop",
+          "country",
+          "metal",
+          "indian",
+          "opera",
+          "new age",
+          "dance",
+          "classic",
+          "slow",
+          "fast",
+          "ambient",
+          "loud",
+          "quiet",
+          "soft",
+          "weird"
+        ],
+        "bert": {
+          "model_name": "distilbert-base-uncased",
+          "max_length": 128,
+          "freeze": false,
+          "hidden_dim": 768
+        },
+        "gnn": {
+          "type": "GraphSAGE",
+          "hidden_dim": 128,
+          "num_layers": 2,
+          "dropout": 0.3,
+          "readout": "mean"
+        },
+        "fusion": {
+          "method": "cross_attention",
+          "projection_dim": 128,
+          "num_attention_heads": 4,
+          "dropout": 0.2
+        },
+        "training": {
+          "batch_size": 48,
+          "gnn_epochs": 50,
+          "frozen_epochs": 6,
+          "finetune_epochs": 2,
+          "gnn_learning_rate": 0.001,
+          "frozen_learning_rate": 0.0005,
+          "finetune_learning_rate": 2e-05,
+          "weight_decay": 0.0001
+        },
+        "mode": "gnn_only"
+      }
+    },
+    "concat": {
+      "mode": "concat",
+      "best_validation_macro_f1_at_0.5": 0.32759443952714135,
+      "threshold_tuned_on_validation": 0.8000000000000002,
+      "test_loss": 0.7460918328059571,
+      "test_metrics": {
+        "macro_f1": 0.3707632064898798,
+        "micro_f1": 0.4378707224334601,
+        "macro_precision": 0.3682962558652595,
+        "macro_recall": 0.40489502914264947,
+        "micro_precision": 0.42989398238017024,
+        "micro_recall": 0.4461490779482411,
+        "mean_auc_pr": 0.35414102785412716,
+        "threshold": 0.8000000000000002,
+        "num_samples": 5329,
+        "num_tags": 19,
+        "per_tag": [
+          {
+            "tag": "classical",
+            "f1": 0.5995777621393384,
+            "auc_pr": 0.610699481338765,
+            "support": 699
+          },
+          {
+            "tag": "techno",
+            "f1": 0.5806962025316456,
+            "auc_pr": 0.598217465885456,
+            "support": 598
+          },
+          {
+            "tag": "electronic",
+            "f1": 0.5068119891008175,
+            "auc_pr": 0.4638728628540229,
+            "support": 496
+          },
+          {
+            "tag": "rock",
+            "f1": 0.6580406654343808,
+            "auc_pr": 0.7325952396436471,
+            "support": 564
+          },
+          {
+            "tag": "pop",
+            "f1": 0.40653357531760437,
+            "auc_pr": 0.36520436035445086,
+            "support": 196
+          },
+          {
+            "tag": "country",
+            "f1": 0.13043478260869565,
+            "auc_pr": 0.12787356815179854,
+            "support": 67
+          },
+          {
+            "tag": "metal",
+            "f1": 0.35782747603833864,
+            "auc_pr": 0.3338884215205032,
+            "support": 165
+          },
+          {
+            "tag": "indian",
+            "f1": 0.4416403785488959,
+            "auc_pr": 0.3980162682465994,
+            "support": 174
+          },
+          {
+            "tag": "opera",
+            "f1": 0.6099893730074389,
+            "auc_pr": 0.6126544458515769,
+            "support": 373
+          },
+          {
+            "tag": "new age",
+            "f1": 0.20952380952380953,
+            "auc_pr": 0.12251393533174182,
+            "support": 148
+          },
+          {
+            "tag": "dance",
+            "f1": 0.3805104408352668,
+            "auc_pr": 0.3363305246876745,
+            "support": 153
+          },
+          {
+            "tag": "classic",
+            "f1": 0.24548736462093862,
+            "auc_pr": 0.1504342886612881,
+            "support": 110
+          },
+          {
+            "tag": "slow",
+            "f1": 0.28797190517998245,
+            "auc_pr": 0.40223169999256947,
+            "support": 806
+          },
+          {
+            "tag": "fast",
+            "f1": 0.35507246376811596,
+            "auc_pr": 0.333180388283392,
+            "support": 495
+          },
+          {
+            "tag": "ambient",
+            "f1": 0.4230055658627087,
+            "auc_pr": 0.3917959480579866,
+            "support": 508
+          },
+          {
+            "tag": "loud",
+            "f1": 0.28990825688073396,
+            "auc_pr": 0.26988933887541844,
+            "support": 273
+          },
+          {
+            "tag": "quiet",
+            "f1": 0.2582897033158813,
+            "auc_pr": 0.1976605913739434,
+            "support": 248
+          },
+          {
+            "tag": "soft",
+            "f1": 0.24329896907216494,
+            "auc_pr": 0.20089789694895413,
+            "support": 249
+          },
+          {
+            "tag": "weird",
+            "f1": 0.059880239520958084,
+            "auc_pr": 0.08072280316862743,
+            "support": 131
+          }
+        ]
+      },
+      "history": {
+        "mode": "concat",
+        "epoch": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "phase": [
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "partial_fine_tune",
+          "partial_fine_tune"
+        ],
+        "train_loss": [
+          0.9175910168733352,
+          0.7850636827640044,
+          0.739053258834741,
+          0.7102453448833563,
+          0.6939074819668746,
+          0.683627555003533,
+          0.6804732994391368,
+          0.6709434109620559
+        ],
+        "val_loss": [
+          0.7640022895275018,
+          0.7364807977126195,
+          0.7081607091121185,
+          0.7057614158361386,
+          0.7078788853608645,
+          0.7003179620473813,
+          0.6959317517586243,
+          0.6931084577853863
+        ],
+        "val_macro_f1": [
+          0.310726801211271,
+          0.29867894084019153,
+          0.31767059576531187,
+          0.31327570480951056,
+          0.30911762681645055,
+          0.318648289105274,
+          0.32299793454945785,
+          0.32759443952714135
+        ],
+        "val_micro_f1": [
+          0.33963030672354255,
+          0.33751425313568983,
+          0.3564034909681348,
+          0.34766464725425056,
+          0.3456150450969104,
+          0.3471537643761477,
+          0.34794232789076673,
+          0.36012861736334406
+        ]
+      },
+      "training_time_seconds": 92.74906849861145,
+      "parameter_counts": {
+        "total": 66826515,
+        "trainable": 7551507
+      },
+      "provenance": {
+        "run_id": "20260825_185201",
+        "experiment_signature": "601c5f41c094363a1b580a5d679b46517066cf3638c9326ee5c8a3ed7fbd66f7",
+        "experiment_version": "task3-official-shards-rich77-v2",
+        "seed": 42,
+        "split_file_sha256": "9f99019a541f0002ffd8ae000a3957411a0c1ebd45e1e5799d48540960757599",
+        "split_counts": {
+          "train": 18706,
+          "val": 1825,
+          "test": 5329
+        },
+        "preprocessing_version": "mtat-rich77-5s-v1",
+        "preprocessing_signature": null,
+        "feature_dim": 77,
+        "target_tags": [
+          "classical",
+          "techno",
+          "electronic",
+          "rock",
+          "pop",
+          "country",
+          "metal",
+          "indian",
+          "opera",
+          "new age",
+          "dance",
+          "classic",
+          "slow",
+          "fast",
+          "ambient",
+          "loud",
+          "quiet",
+          "soft",
+          "weird"
+        ],
+        "bert": {
+          "model_name": "distilbert-base-uncased",
+          "max_length": 128,
+          "freeze": false,
+          "hidden_dim": 768
+        },
+        "gnn": {
+          "type": "GraphSAGE",
+          "hidden_dim": 128,
+          "num_layers": 2,
+          "dropout": 0.3,
+          "readout": "mean"
+        },
+        "fusion": {
+          "method": "cross_attention",
+          "projection_dim": 128,
+          "num_attention_heads": 4,
+          "dropout": 0.2
+        },
+        "training": {
+          "batch_size": 48,
+          "gnn_epochs": 50,
+          "frozen_epochs": 6,
+          "finetune_epochs": 2,
+          "gnn_learning_rate": 0.001,
+          "frozen_learning_rate": 0.0005,
+          "finetune_learning_rate": 2e-05,
+          "weight_decay": 0.0001
+        },
+        "mode": "concat"
+      }
+    },
+    "cross_attention": {
+      "mode": "cross_attention",
+      "best_validation_macro_f1_at_0.5": 0.3344916858544737,
+      "threshold_tuned_on_validation": 0.7500000000000002,
+      "test_loss": 0.7566664314695767,
+      "test_metrics": {
+        "macro_f1": 0.3786161444820097,
+        "micro_f1": 0.4444444444444444,
+        "macro_precision": 0.33914049515033035,
+        "macro_recall": 0.46104422170265513,
+        "micro_precision": 0.3965475322149283,
+        "micro_recall": 0.5055013172167984,
+        "mean_auc_pr": 0.35452833805711653,
+        "threshold": 0.7500000000000002,
+        "num_samples": 5329,
+        "num_tags": 19,
+        "per_tag": [
+          {
+            "tag": "classical",
+            "f1": 0.6150091519219036,
+            "auc_pr": 0.6103129637653529,
+            "support": 699
+          },
+          {
+            "tag": "techno",
+            "f1": 0.5845410628019324,
+            "auc_pr": 0.6120608601802918,
+            "support": 598
+          },
+          {
+            "tag": "electronic",
+            "f1": 0.4954128440366973,
+            "auc_pr": 0.4662233181090841,
+            "support": 496
+          },
+          {
+            "tag": "rock",
+            "f1": 0.6411411411411412,
+            "auc_pr": 0.7250971320689862,
+            "support": 564
+          },
+          {
+            "tag": "pop",
+            "f1": 0.38731218697829717,
+            "auc_pr": 0.3617631760687373,
+            "support": 196
+          },
+          {
+            "tag": "country",
+            "f1": 0.1330049261083744,
+            "auc_pr": 0.12021380976689337,
+            "support": 67
+          },
+          {
+            "tag": "metal",
+            "f1": 0.421978021978022,
+            "auc_pr": 0.37462948342939484,
+            "support": 165
+          },
+          {
+            "tag": "indian",
+            "f1": 0.43023255813953487,
+            "auc_pr": 0.3995249451464939,
+            "support": 174
+          },
+          {
+            "tag": "opera",
+            "f1": 0.5985699693564862,
+            "auc_pr": 0.6003079748888888,
+            "support": 373
+          },
+          {
+            "tag": "new age",
+            "f1": 0.21019108280254778,
+            "auc_pr": 0.12781301975871917,
+            "support": 148
+          },
+          {
+            "tag": "dance",
+            "f1": 0.4009546539379475,
+            "auc_pr": 0.3350115740307145,
+            "support": 153
+          },
+          {
+            "tag": "classic",
+            "f1": 0.23076923076923078,
+            "auc_pr": 0.1385365539626514,
+            "support": 110
+          },
+          {
+            "tag": "slow",
+            "f1": 0.3810909090909091,
+            "auc_pr": 0.3950655693163375,
+            "support": 806
+          },
+          {
+            "tag": "fast",
+            "f1": 0.3564356435643564,
+            "auc_pr": 0.34216516884084125,
+            "support": 495
+          },
+          {
+            "tag": "ambient",
+            "f1": 0.42183163737280294,
+            "auc_pr": 0.359794243258423,
+            "support": 508
+          },
+          {
+            "tag": "loud",
+            "f1": 0.32054794520547947,
+            "auc_pr": 0.2957529956722719,
+            "support": 273
+          },
+          {
+            "tag": "quiet",
+            "f1": 0.2704309063893016,
+            "auc_pr": 0.2019336815851962,
+            "support": 248
+          },
+          {
+            "tag": "soft",
+            "f1": 0.2482758620689655,
+            "auc_pr": 0.18871425933955857,
+            "support": 249
+          },
+          {
+            "tag": "weird",
+            "f1": 0.04597701149425287,
+            "auc_pr": 0.08111769389637827,
+            "support": 131
+          }
+        ]
+      },
+      "history": {
+        "mode": "cross_attention",
+        "epoch": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "phase": [
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "bert_frozen",
+          "partial_fine_tune",
+          "partial_fine_tune"
+        ],
+        "train_loss": [
+          0.9230632930229872,
+          0.7874760578840206,
+          0.736261995939108,
+          0.7116270672816497,
+          0.6899428469248307,
+          0.6749901868593998,
+          0.6771693812730984,
+          0.6733598452347975
+        ],
+        "val_loss": [
+          0.7662927814019032,
+          0.7265190818370917,
+          0.6978766077604049,
+          0.6978345008996817,
+          0.6809450288613638,
+          0.6855104764302572,
+          0.6896214607434396,
+          0.6859264962184124
+        ],
+        "val_macro_f1": [
+          0.29247462534887764,
+          0.3170020136052777,
+          0.31168860809013865,
+          0.32462804379980087,
+          0.32573900920145044,
+          0.3237715730257778,
+          0.3344916858544737,
+          0.32053729388826735
+        ],
+        "val_micro_f1": [
+          0.32194567994700485,
+          0.32762485429929167,
+          0.35026303204208514,
+          0.3574167507568113,
+          0.36687609434545265,
+          0.35240319128235065,
+          0.36446000205909607,
+          0.3529184009292421
+        ]
+      },
+      "training_time_seconds": 97.74660634994507,
+      "parameter_counts": {
+        "total": 66681363,
+        "trainable": 7406355
+      },
+      "provenance": {
+        "run_id": "20260825_185201",
+        "experiment_signature": "601c5f41c094363a1b580a5d679b46517066cf3638c9326ee5c8a3ed7fbd66f7",
+        "experiment_version": "task3-official-shards-rich77-v2",
+        "seed": 42,
+        "split_file_sha256": "9f99019a541f0002ffd8ae000a3957411a0c1ebd45e1e5799d48540960757599",
+        "split_counts": {
+          "train": 18706,
+          "val": 1825,
+          "test": 5329
+        },
+        "preprocessing_version": "mtat-rich77-5s-v1",
+        "preprocessing_signature": null,
+        "feature_dim": 77,
+        "target_tags": [
+          "classical",
+          "techno",
+          "electronic",
+          "rock",
+          "pop",
+          "country",
+          "metal",
+          "indian",
+          "opera",
+          "new age",
+          "dance",
+          "classic",
+          "slow",
+          "fast",
+          "ambient",
+          "loud",
+          "quiet",
+          "soft",
+          "weird"
+        ],
+        "bert": {
+          "model_name": "distilbert-base-uncased",
+          "max_length": 128,
+          "freeze": false,
+          "hidden_dim": 768
+        },
+        "gnn": {
+          "type": "GraphSAGE",
+          "hidden_dim": 128,
+          "num_layers": 2,
+          "dropout": 0.3,
+          "readout": "mean"
+        },
+        "fusion": {
+          "method": "cross_attention",
+          "projection_dim": 128,
+          "num_attention_heads": 4,
+          "dropout": 0.2
+        },
+        "training": {
+          "batch_size": 48,
+          "gnn_epochs": 50,
+          "frozen_epochs": 6,
+          "finetune_epochs": 2,
+          "gnn_learning_rate": 0.001,
+          "frozen_learning_rate": 0.0005,
+          "finetune_learning_rate": 2e-05,
+          "weight_decay": 0.0001
+        },
+        "mode": "cross_attention"
+      }
+    }
+  },
+  "tsne": {
+    "genre": {
+      "plotted": true,
+      "samples": 1771,
+      "selection": "exactly one active ground-truth genre tag",
+      "perplexity": 30,
+      "iterations": 1000,
+      "seed": 42
+    },
+    "mood": {
+      "plotted": true,
+      "samples": 1294,
+      "selection": "exactly one active ground-truth mood tag",
+      "perplexity": 30,
+      "iterations": 1000,
+      "seed": 42
+    }
+  },
+  "device": "cuda",
+  "seed": 42,
+  "provenance": {
+    "run_id": "20260825_185201",
+    "experiment_signature": "601c5f41c094363a1b580a5d679b46517066cf3638c9326ee5c8a3ed7fbd66f7",
+    "experiment_version": "task3-official-shards-rich77-v2",
+    "seed": 42,
+    "split_file_sha256": "9f99019a541f0002ffd8ae000a3957411a0c1ebd45e1e5799d48540960757599",
+    "split_counts": {
+      "train": 18706,
+      "val": 1825,
+      "test": 5329
+    },
+    "preprocessing_version": "mtat-rich77-5s-v1",
+    "preprocessing_signature": null,
+    "feature_dim": 77,
+    "target_tags": [
+      "classical",
+      "techno",
+      "electronic",
+      "rock",
+      "pop",
+      "country",
+      "metal",
+      "indian",
+      "opera",
+      "new age",
+      "dance",
+      "classic",
+      "slow",
+      "fast",
+      "ambient",
+      "loud",
+      "quiet",
+      "soft",
+      "weird"
+    ],
+    "bert": {
+      "model_name": "distilbert-base-uncased",
+      "max_length": 128,
+      "freeze": false,
+      "hidden_dim": 768
+    },
+    "gnn": {
+      "type": "GraphSAGE",
+      "hidden_dim": 128,
+      "num_layers": 2,
+      "dropout": 0.3,
+      "readout": "mean"
+    },
+    "fusion": {
+      "method": "cross_attention",
+      "projection_dim": 128,
+      "num_attention_heads": 4,
+      "dropout": 0.2
+    },
+    "training": {
+      "batch_size": 48,
+      "gnn_epochs": 50,
+      "frozen_epochs": 6,
+      "finetune_epochs": 2,
+      "gnn_learning_rate": 0.001,
+      "frozen_learning_rate": 0.0005,
+      "finetune_learning_rate": 2e-05,
+      "weight_decay": 0.0001
+    }
+  }
+}
