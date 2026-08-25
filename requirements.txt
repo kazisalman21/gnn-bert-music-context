@@ -1,0 +1,22 @@
+# Portable project dependencies. Install the PyTorch build appropriate for your
+# platform first when CUDA is required: https://pytorch.org/get-started/locally/
+numpy>=1.26,<3
+pandas>=2.1,<4
+PyYAML>=6,<7
+torch>=2.2,<3
+torch-geometric>=2.5,<3
+torchaudio>=2.2,<3
+librosa>=0.10,<1
+soundfile>=0.12,<1
+scikit-learn>=1.4,<2
+matplotlib>=3.8,<4
+transformers>=4.40,<6
+datasets>=2.18,<6
+yt-dlp>=2025.1.1
+jupyter>=1,<2
+nbclient>=0.10,<1
+nbformat>=5.9,<6
+Pillow>=10,<13
+PyMuPDF>=1.24,<2
+psutil>=5.9,<8
+pytest>=8,<10

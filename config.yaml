@@ -1,0 +1,207 @@
+# GNN-Based BERT for Understanding Context from Music
+# Central Configuration File
+# All paths are relative to the project root unless noted.
+
+seed: 42
+device: "cuda"  # will fallback to cpu if unavailable
+
+# --- Paths ---
+paths:
+  project_root: "."
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  data_splits: "data/splits"
+  checkpoints: "checkpoints"
+  results: "results"
+  plots: "plots"
+  retrieval_examples: "retrieval_examples"
+  report: "report"
+
+# --- Audio Preprocessing ---
+audio:
+  sample_rate: 22050
+  # Log-mel spectrogram (for CNN baseline)
+  mel_bins: 128
+  mel_hop_length: 512
+  mel_n_fft: 2048
+  # Chroma features (for graph node features)
+  chroma_bins: 12
+  # MFCC features (for graph node features and similarity)
+  n_mfcc: 20
+  # Normalization
+  normalize: true  # per-track zero-mean, unit-variance
+
+# --- Segmentation ---
+segmentation:
+  gtzan_window_sec: 5.0    # 30s tracks -> ~6 nodes
+  mtat_window_sec: 5.0     # 29s tracks -> ~6 nodes
+  musiccaps_window_sec: 2.0 # 10s tracks -> ~5 nodes (or beat-sync)
+  musiccaps_use_beat_sync: false # current pipeline uses fixed two-second windows
+  hop_sec: null  # null = non-overlapping windows
+
+# --- Graph Construction ---
+graph:
+  similarity_metric: "cosine"  # cosine similarity of segment features
+  tau: 0.5  # fixed before training; any future tuning must use validation only
+  self_loops: true
+  directed: false
+  node_feature: "rich77"  # MFCC, chroma, spectral, and energy statistics
+  temporal_edges: true   # consecutive segments always connected
+
+# --- BERT / DistilBERT ---
+bert:
+  model_name: "distilbert-base-uncased"
+  max_length: 128
+  freeze: false  # fine-tune by default; can freeze for experiments
+  hidden_dim: 768  # DistilBERT hidden size
+
+# --- GNN ---
+gnn:
+  type: "GraphSAGE"  # "GraphSAGE" or "GAT"
+  hidden_dim: 128
+  num_layers: 2
+  dropout: 0.3
+  readout: "mean"  # graph-level pooling
+
+# --- Fusion ---
+fusion:
+  method: "cross_attention"  # "concat", "cross_attention"
+  projection_dim: 128
+  num_attention_heads: 4
+  dropout: 0.2
+
+# --- Training ---
+training:
+  # Shared policy. Exact schedules are listed under each task below.
+  optimizer: "AdamW"
+  mixed_precision: false  # enable if stable
+  gradient_clip: 1.0
+  num_workers: 0  # Windows-safe and deterministic
+
+# --- Task 1: MusicCaps caption -> tag proxy ---
+task1:
+  min_tag_frequency: 20  # minimum training examples per tag
+  validation_fraction: 0.10
+  loss: "bce_with_logits"
+  training:
+    batch_size: 16
+    frozen_epochs: 12
+    finetune_epochs: 5
+    frozen_learning_rate: 0.0002
+    finetune_learning_rate: 0.00002
+    weight_decay: 0.01
+    early_stopping_patience: 4
+
+# --- Task 2: GTZAN genre classification ---
+task2:
+  num_classes: 10
+  loss: "cross_entropy"
+  graph_model:
+    hidden_dim: 256
+    num_layers: 3
+    dropout: 0.3
+  training:
+    gnn_batch_size: 32
+    cnn_batch_size: 16
+    gnn_epochs: 150
+    cnn_epochs: 100
+    learning_rate: 0.001
+    weight_decay: 0.0001
+    gnn_patience: 20
+    cnn_patience: 15
+
+# --- Task 3: MTAT disjoint context-to-target ---
+task3:
+  num_target_tags: 19  # 12 genre + 7 mood
+  split_protocol: "official_shards"
+  train_shards: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b"]
+  validation_shards: ["c"]
+  test_shards: ["d", "e", "f"]
+  loss: "bce_with_logits"
+  training:
+    batch_size: 48
+    gnn_epochs: 50
+    frozen_epochs: 6
+    finetune_epochs: 2
+    gnn_learning_rate: 0.001
+    frozen_learning_rate: 0.0005
+    finetune_learning_rate: 0.00002
+    weight_decay: 0.0001
+  context_tags:  # 31 instrument/vocal tags (BERT input only)
+    - guitar
+    - strings
+    - drums
+    - piano
+    - violin
+    - vocal
+    - synth
+    - female
+    - male
+    - singing
+    - vocals
+    - "no vocals"
+    - harpsichord
+    - flute
+    - woman
+    - "male vocal"
+    - "no vocal"
+    - sitar
+    - solo
+    - man
+    - choir
+    - voice
+    - "male voice"
+    - "female vocal"
+    - beats
+    - harp
+    - cello
+    - "no voice"
+    - "female voice"
+    - choral
+    - beat
+  target_tags:  # 19 genre + mood tags (prediction targets)
+    genre:
+      - classical
+      - techno
+      - electronic
+      - rock
+      - pop
+      - country
+      - metal
+      - indian
+      - opera
+      - "new age"
+      - dance
+      - classic
+    mood:
+      - slow
+      - fast
+      - ambient
+      - loud
+      - quiet
+      - soft
+      - weird
+
+# --- Task 4: MusicCaps contrastive ---
+task4:
+  temperature: 0.07
+  projection_dim: 128
+  loss: "infonce"
+  freeze_bert: true
+  initialize_gnn_from_task3: true
+  protocol_ranges:
+    train: {start: 0, limit: 400}
+    val: {start: 0, limit: 100}
+    test: {start: 200, limit: 100}
+  training:
+    batch_size: 64
+    epochs: 50
+    learning_rate: 0.0005
+    weight_decay: 0.0001
+    early_stopping_patience: 10
+
+# --- Evaluation ---
+evaluation:
+  threshold: 0.5  # default; tuned on validation for multi-label
+  tsne_perplexity: 30
+  tsne_n_iter: 1000

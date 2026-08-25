@@ -1,0 +1,138 @@
+# Implementation plan
+
+## Project aim
+
+The project studies whether segment-level audio graphs and text descriptions provide useful,
+complementary information for music-context prediction. The required work is divided into three
+main experiments and one optional contrastive extension. Every score in the report must come from
+an executed training/evaluation script on a frozen held-out split.
+
+## Data used
+
+| Dataset | Use | Current usable data |
+|---|---|---:|
+| MusicCaps | Tasks 1 and 4; Task 3 qualitative transfer | 5,521 metadata rows; recovered real-audio counts are recorded in `results/task4_results.json` |
+| GTZAN | Task 2 GraphSAGE and log-mel CNN | 999 tracks; one unreadable source file recorded |
+| MagnaTagATune | Task 3 graph/text fusion | 25,863 annotation rows; three known empty audio files are expected to be excluded |
+
+Audio is loaded as mono at 22,050 Hz. GTZAN and MTAT use non-overlapping five-second segments.
+Downloaded ten-second MusicCaps intervals use two-second segments for the qualitative figures.
+Each graph node has 77 values: MFCC mean/std (40), chroma mean/std (24), spectral contrast (7),
+spectral centroid mean/std (2), zero-crossing-rate mean/std (2), and RMS mean/std (2). Features
+are standardized per track. Edges include adjacent segments and pairs whose cosine similarity is
+greater than the fixed threshold 0.5; self-loops are included.
+
+## Frozen split policy
+
+- MusicCaps: AudioSet-evaluation rows are test data. Remaining rows use a seeded 90/10
+  train/validation split. Counts are 2,396/267/2,858 and YouTube-ID overlap is zero.
+- GTZAN: seeded per-genre grouping with SHA-256 audio hashes gives 797/99/103 tracks. All 14
+  exact duplicate groups stay within one partition; cross-split exact duplicates are zero.
+- MTAT: official shards 0--b/c/d--f give 18,709/1,825/5,329 annotation rows. Clip and exact
+  artist-title-album tuple overlap are zero. The official protocol retains some artist overlap,
+  which is reported as a limitation.
+
+The test partitions are used only after validation-based checkpoint and threshold selection.
+
+## Task status and method
+
+### Task 1: DistilBERT caption-to-tag baseline
+
+- Input: real MusicCaps expert caption.
+- Target: 191 aspect tags occurring at least 20 times in training data.
+- Loss: weighted binary cross-entropy; weights use training labels only.
+- Training: 12 frozen-backbone epochs followed by 5 fine-tuning epochs.
+- Output: Macro/Micro F1, mean AUC-PR, learning curve, per-tag results, and five test examples.
+- Status: complete. Test Macro-F1 is 0.2863 and Micro-F1 is 0.4000.
+
+### Task 2: GraphSAGE versus log-mel CNN
+
+- Input: the same duplicate-safe GTZAN split for both models.
+- Graph model: three GraphSAGE layers with 256 hidden units, global mean pooling, and a ten-class head.
+- Baseline: three-block CNN over normalized 128-bin log-mel spectrograms.
+- Loss/selection: cross-entropy; best validation Macro-F1 checkpoint.
+- Output: accuracy, Macro-F1, learning curves, model comparison, and both confusion matrices.
+- Status: complete. GraphSAGE test accuracy/Macro-F1 is 0.2816/0.2691; CNN is
+  0.8058/0.7950. The low GNN generalization is retained as a real negative result.
+
+### Task 3: disjoint-context GNN--BERT fusion
+
+- Audio input: real MTAT five-second segment graph.
+- Text input: a sentence built only from 31 instrument/vocal annotations.
+- Targets: 12 genre and 7 mood tags. Context and target vocabulary are lexically disjoint.
+- Models: BERT-only, GNN-only, early concatenation, and graph-to-token cross-attention.
+- Loss/selection: weighted binary cross-entropy; validation Macro-F1 and a validation-tuned global
+  threshold.
+- Output: four-way Macro-F1/AUC-PR table, learning curves, per-tag plot, genre/mood t-SNE, and
+  held-out qualitative cases.
+- Qualitative requirement: use the MTAT-trained checkpoint on three real held-out MusicCaps
+  segment graphs and expert captions. This is reported as transfer analysis, not a MusicCaps score.
+- Status: complete. Concatenation test Macro-F1/AUC-PR is 0.3734/0.3559; cross-attention is
+  0.3592/0.3467. Both fusion models outperform the single-modality ablations.
+
+### Task 4: optional contrastive retrieval
+
+- Input: recovered real MusicCaps audio/caption pairs only; unavailable clips are not replaced.
+- Model: graph and DistilBERT encoders with normalized projections and symmetric InfoNCE.
+- Evaluation: audio-to-text and text-to-audio Recall@1/5/10 plus ten retrieval examples.
+- Final protocol: request train records 0--399, validation 0--99, and the previously unused
+  official-test block 200--299; use every successfully recovered clip in those ranges.
+- Selection: mean bidirectional validation Recall@5; final test evaluation only after the
+  checkpoint is frozen.
+- Status: implemented and executed with real audio. Metrics, ten top-three examples, zero-shot
+  tag transfer, checkpoint provenance, and plots are generated by `scripts/run_task4.py`.
+
+## Execution order
+
+```text
+python scripts/prepare_splits.py
+python scripts/preprocess_gtzan.py
+python scripts/preprocess_mtat.py
+python scripts/download_musiccaps_audio.py --split train --offset 0 --limit 400
+python scripts/download_musiccaps_audio.py --split val --offset 0 --limit 100
+python scripts/download_musiccaps_audio.py --split test --offset 200 --limit 100
+python scripts/preprocess_musiccaps.py
+python scripts/run_baselines.py
+python scripts/run_task1.py
+python scripts/run_task2.py
+python scripts/run_task3.py
+python scripts/run_task4.py
+python scripts/generate_task3_case_studies.py
+python scripts/generate_musiccaps_case_studies.py
+python scripts/generate_architecture_figure.py
+python scripts/generate_report_assets.py
+python scripts/regenerate_plots.py
+python scripts/validate_project.py
+python scripts/create_submission.py
+```
+
+Tasks 1, 2, and 3 have been executed on their full usable real-data splits. Task 4 uses its
+frozen recovered-audio protocol. All four Task 3 ablations, case studies, report assets,
+validation checks, and the clean submission ZIP are complete.
+
+## Validation and integrity checks
+
+- `tests/gate_test_preprocessing.py` uses three real GTZAN tracks and temporary output.
+- `tests/overfit_test_gnn.py` uses 50 real graphs; it reached 100% training accuracy, confirming
+  that the model can learn and that Task 2's poor graph result is a generalization issue.
+- `tests/smoke_test_models.py` covers Tasks 1--4 using real held-out records and actual trained
+  checkpoints.
+- `tests/test_core.py` checks retrieval metrics, InfoNCE gradients, provenance hashes, cache
+  invalidation, and the safe script allowlist.
+- Result tables are generated from JSON files. The LaTeX report does not contain manually entered
+  experimental scores.
+
+All deliverables below are complete and were checked on 2026-08-25.
+- Failed/unavailable downloads and corrupted source files remain documented.
+
+## Final deliverables
+
+- organized source code, scripts, configuration, split files, and requirements;
+- at least 20 valid graph samples (already exceeded by GTZAN alone);
+- real checkpoints and result JSON files for Tasks 1--4;
+- faculty evaluation CSV/Markdown/LaTeX tables;
+- learning curves, confusion heatmaps, ablations, per-tag plot, t-SNE, architecture diagram, and
+  three graph/caption alignment cases and ten Task 4 retrieval examples;
+- `notebooks/eda.ipynb` and `notebooks/demo_context.ipynb`;
+- a 6--10 page IEEE-style PDF report;
+- a clean source submission archive that excludes raw audio, environments, and legacy artifacts.

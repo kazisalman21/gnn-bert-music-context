@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+
+# Large datasets and generated artifacts
+data/raw/*
+data/processed/*
+checkpoints/*
+results/legacy_pre_audit_*/
+scripts/legacy_pre_audit_*/
+report/legacy/
+report/drafts/
+report/$latexTemp/
+
+# Generated report intermediates
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.log
+results/*.log
+report/*.out
+report/*.synctex.gz
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Keep directory placeholders where needed
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!checkpoints/.gitkeep
