@@ -1,0 +1,348 @@
+{
+  "dataset": "MusicCaps held-out AudioSet-eval partition",
+  "model_training_dataset": "MagnaTagATune",
+  "interpretation": "qualitative transfer only; not a MusicCaps performance estimate",
+  "selection": "first three available held-out clips in the frozen test split",
+  "attention": "mean over four cross-attention heads; 18 highest-attention content tokens shown in sequence order",
+  "figure": "plots/task3_musiccaps_case_studies.png",
+  "cases": [
+    {
+      "case": 1,
+      "ytid": "-0Gj8-vB1q4",
+      "split": "test",
+      "caption": "The low quality recording features a ballad song that contains sustained strings, mellow piano melody and soft female vocal singing over it. It sounds sad and soulful, like something you would hear at Sunday services.",
+      "exact_task3_target_aspects": [],
+      "threshold": 0.7500000000000002,
+      "predictions": [
+        {
+          "tag": "classical",
+          "probability": 0.7649917006492615
+        },
+        {
+          "tag": "slow",
+          "probability": 0.7598891854286194
+        }
+      ],
+      "displayed_tokens": [
+        {
+          "position": 7,
+          "token": "ballad",
+          "mean_attention": 0.038291044533252716
+        },
+        {
+          "position": 8,
+          "token": "song",
+          "mean_attention": 0.024574249982833862
+        },
+        {
+          "position": 11,
+          "token": "sustained",
+          "mean_attention": 0.03637327998876572
+        },
+        {
+          "position": 12,
+          "token": "strings",
+          "mean_attention": 0.06716293096542358
+        },
+        {
+          "position": 14,
+          "token": "mel",
+          "mean_attention": 0.040038105100393295
+        },
+        {
+          "position": 15,
+          "token": "##low",
+          "mean_attention": 0.03565235808491707
+        },
+        {
+          "position": 16,
+          "token": "piano",
+          "mean_attention": 0.10202566534280777
+        },
+        {
+          "position": 17,
+          "token": "melody",
+          "mean_attention": 0.05223879590630531
+        },
+        {
+          "position": 19,
+          "token": "soft",
+          "mean_attention": 0.028993936255574226
+        },
+        {
+          "position": 20,
+          "token": "female",
+          "mean_attention": 0.07039740681648254
+        },
+        {
+          "position": 21,
+          "token": "vocal",
+          "mean_attention": 0.02748394012451172
+        },
+        {
+          "position": 22,
+          "token": "singing",
+          "mean_attention": 0.031641121953725815
+        },
+        {
+          "position": 24,
+          "token": "it",
+          "mean_attention": 0.021768365055322647
+        },
+        {
+          "position": 28,
+          "token": "sad",
+          "mean_attention": 0.03471008315682411
+        },
+        {
+          "position": 30,
+          "token": "soul",
+          "mean_attention": 0.049153342843055725
+        },
+        {
+          "position": 31,
+          "token": "##ful",
+          "mean_attention": 0.03173502907156944
+        },
+        {
+          "position": 39,
+          "token": "sunday",
+          "mean_attention": 0.021080488339066505
+        },
+        {
+          "position": 40,
+          "token": "services",
+          "mean_attention": 0.023098746314644814
+        }
+      ]
+    },
+    {
+      "case": 2,
+      "ytid": "-0vPFx-wRRI",
+      "split": "test",
+      "caption": "a male voice is singing a melody with changing tempos while snipping his fingers rhythmically. The recording sounds like it has been recorded in an empty room. This song may be playing, practicing snipping and singing along.",
+      "exact_task3_target_aspects": [],
+      "threshold": 0.7500000000000002,
+      "predictions": [
+        {
+          "tag": "indian",
+          "probability": 0.7440555095672607
+        },
+        {
+          "tag": "slow",
+          "probability": 0.6840033531188965
+        },
+        {
+          "tag": "quiet",
+          "probability": 0.5330160856246948
+        }
+      ],
+      "displayed_tokens": [
+        {
+          "position": 2,
+          "token": "male",
+          "mean_attention": 0.028886113315820694
+        },
+        {
+          "position": 7,
+          "token": "melody",
+          "mean_attention": 0.03930503502488136
+        },
+        {
+          "position": 9,
+          "token": "changing",
+          "mean_attention": 0.02644851990044117
+        },
+        {
+          "position": 10,
+          "token": "tempo",
+          "mean_attention": 0.03671519458293915
+        },
+        {
+          "position": 13,
+          "token": "s",
+          "mean_attention": 0.0372907929122448
+        },
+        {
+          "position": 14,
+          "token": "##ni",
+          "mean_attention": 0.023320091888308525
+        },
+        {
+          "position": 15,
+          "token": "##pping",
+          "mean_attention": 0.030008848756551743
+        },
+        {
+          "position": 17,
+          "token": "fingers",
+          "mean_attention": 0.024383706972002983
+        },
+        {
+          "position": 18,
+          "token": "rhythmic",
+          "mean_attention": 0.043948329985141754
+        },
+        {
+          "position": 19,
+          "token": "##ally",
+          "mean_attention": 0.0230826735496521
+        },
+        {
+          "position": 22,
+          "token": "recording",
+          "mean_attention": 0.024760570377111435
+        },
+        {
+          "position": 28,
+          "token": "recorded",
+          "mean_attention": 0.026526261121034622
+        },
+        {
+          "position": 32,
+          "token": "room",
+          "mean_attention": 0.025128457695245743
+        },
+        {
+          "position": 38,
+          "token": "playing",
+          "mean_attention": 0.03010670281946659
+        },
+        {
+          "position": 41,
+          "token": "s",
+          "mean_attention": 0.0391714908182621
+        },
+        {
+          "position": 43,
+          "token": "##pping",
+          "mean_attention": 0.031025715172290802
+        },
+        {
+          "position": 45,
+          "token": "singing",
+          "mean_attention": 0.02473635785281658
+        },
+        {
+          "position": 46,
+          "token": "along",
+          "mean_attention": 0.023876428604125977
+        }
+      ]
+    },
+    {
+      "case": 3,
+      "ytid": "-1OlgJWehn8",
+      "split": "test",
+      "caption": "This clip is three tracks playing consecutively. The first one is an electric guitar lead harmony with a groovy bass line, followed by white noise and then a female vocalisation to a vivacious melody with a keyboard harmony, slick drumming, funky bass lines and male backup. The three songs are unrelated and unsynced.",
+      "exact_task3_target_aspects": [],
+      "threshold": 0.7500000000000002,
+      "predictions": [
+        {
+          "tag": "rock",
+          "probability": 0.8310396075248718
+        },
+        {
+          "tag": "loud",
+          "probability": 0.8054714202880859
+        },
+        {
+          "tag": "fast",
+          "probability": 0.8030272126197815
+        }
+      ],
+      "displayed_tokens": [
+        {
+          "position": 1,
+          "token": "this",
+          "mean_attention": 0.04743725806474686
+        },
+        {
+          "position": 15,
+          "token": "electric",
+          "mean_attention": 0.041613951325416565
+        },
+        {
+          "position": 16,
+          "token": "guitar",
+          "mean_attention": 0.09885212033987045
+        },
+        {
+          "position": 21,
+          "token": "gr",
+          "mean_attention": 0.023115497082471848
+        },
+        {
+          "position": 22,
+          "token": "##oo",
+          "mean_attention": 0.01965806446969509
+        },
+        {
+          "position": 24,
+          "token": "bass",
+          "mean_attention": 0.03178592771291733
+        },
+        {
+          "position": 25,
+          "token": "line",
+          "mean_attention": 0.02312612533569336
+        },
+        {
+          "position": 29,
+          "token": "white",
+          "mean_attention": 0.019163629040122032
+        },
+        {
+          "position": 30,
+          "token": "noise",
+          "mean_attention": 0.022830147296190262
+        },
+        {
+          "position": 34,
+          "token": "female",
+          "mean_attention": 0.019744720309972763
+        },
+        {
+          "position": 39,
+          "token": "viva",
+          "mean_attention": 0.02082768827676773
+        },
+        {
+          "position": 41,
+          "token": "melody",
+          "mean_attention": 0.01795298606157303
+        },
+        {
+          "position": 44,
+          "token": "keyboard",
+          "mean_attention": 0.030900701880455017
+        },
+        {
+          "position": 45,
+          "token": "harmony",
+          "mean_attention": 0.016705157235264778
+        },
+        {
+          "position": 48,
+          "token": "drumming",
+          "mean_attention": 0.023675337433815002
+        },
+        {
+          "position": 50,
+          "token": "funky",
+          "mean_attention": 0.021023128181695938
+        },
+        {
+          "position": 51,
+          "token": "bass",
+          "mean_attention": 0.03076290898025036
+        },
+        {
+          "position": 54,
+          "token": "male",
+          "mean_attention": 0.027834342792630196
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "dataset": "MagnaTagATune held-out shards d-f",
+  "selection_protocol": "lowest, median, and highest example-level F1 among target-positive test clips",
+  "attention": "mean cross-attention over four heads; evaluation mode",
+  "cases": [
+    {
+      "case": 1,
+      "selection": "low",
+      "clip_id": 10,
+      "example_f1": 0.0,
+      "context_text": "This music features no described instruments or vocals.",
+      "active_context_tags": [],
+      "ground_truth_target_tags": [
+        "classical",
+        "opera",
+        "classic"
+      ],
+      "predictions_shown": [
+        {
+          "tag": "ambient",
+          "probability": 0.511623740196228
+        },
+        {
+          "tag": "quiet",
+          "probability": 0.4676635265350342
+        },
+        {
+          "tag": "slow",
+          "probability": 0.3506294786930084
+        }
+      ],
+      "threshold": 0.7500000000000002,
+      "figure": "plots/task3_case_study_1_attention.png"
+    },
+    {
+      "case": 2,
+      "selection": "median",
+      "clip_id": 7766,
+      "example_f1": 0.5,
+      "context_text": "This music features no described instruments or vocals.",
+      "active_context_tags": [],
+      "ground_truth_target_tags": [
+        "rock",
+        "metal"
+      ],
+      "predictions_shown": [
+        {
+          "tag": "rock",
+          "probability": 0.8797919154167175
+        },
+        {
+          "tag": "loud",
+          "probability": 0.7793159484863281
+        }
+      ],
+      "threshold": 0.7500000000000002,
+      "figure": "plots/task3_case_study_2_attention.png"
+    },
+    {
+      "case": 3,
+      "selection": "high",
+      "clip_id": 58608,
+      "example_f1": 1.0,
+      "context_text": "This music features guitar, strings, piano, solo, and harp.",
+      "active_context_tags": [
+        "guitar",
+        "strings",
+        "piano",
+        "solo",
+        "harp"
+      ],
+      "ground_truth_target_tags": [
+        "classical",
+        "slow",
+        "quiet",
+        "soft"
+      ],
+      "predictions_shown": [
+        {
+          "tag": "quiet",
+          "probability": 0.9655990600585938
+        },
+        {
+          "tag": "soft",
+          "probability": 0.9645016193389893
+        },
+        {
+          "tag": "slow",
+          "probability": 0.9624046683311462
+        },
+        {
+          "tag": "classical",
+          "probability": 0.9597442150115967
+        }
+      ],
+      "threshold": 0.7500000000000002,
+      "figure": "plots/task3_case_study_3_attention.png"
+    }
+  ]
+}
