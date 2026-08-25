@@ -1,0 +1,1457 @@
+{
+  "task": "Task 1: MusicCaps caption to aspect-tag proxy",
+  "dataset": "MusicCaps",
+  "split_counts": {
+    "train": 2396,
+    "val": 267,
+    "test": 2858
+  },
+  "vocabulary_size": 191,
+  "minimum_training_frequency": 20,
+  "threshold_tuned_on_validation": 0.7000000000000002,
+  "best_validation_macro_f1": 0.2960884536852266,
+  "validation_loss": 0.36199319031503463,
+  "test_loss": 0.38573727144135367,
+  "test_metrics": {
+    "macro_f1": 0.2863323313156807,
+    "micro_f1": 0.39997958767095326,
+    "macro_precision": 0.2555571226995832,
+    "macro_recall": 0.46048399315267113,
+    "micro_precision": 0.2919833109819699,
+    "micro_recall": 0.6347586653709103,
+    "mean_auc_pr": 0.2978998362733808,
+    "threshold": 0.7000000000000002,
+    "num_samples": 2858,
+    "num_tags": 191,
+    "per_tag": [
+      {
+        "tag": "low quality",
+        "f1": 0.918872758326217,
+        "auc_pr": 0.9676627686345713,
+        "support": 557
+      },
+      {
+        "tag": "instrumental",
+        "f1": 0.6798336798336798,
+        "auc_pr": 0.6883388122870565,
+        "support": 430
+      },
+      {
+        "tag": "passionate",
+        "f1": 0.43304843304843305,
+        "auc_pr": 0.3889569754723437,
+        "support": 220
+      },
+      {
+        "tag": "noisy",
+        "f1": 0.7104,
+        "auc_pr": 0.7892532135298859,
+        "support": 261
+      },
+      {
+        "tag": "emotional",
+        "f1": 0.5773955773955773,
+        "auc_pr": 0.6291387106297888,
+        "support": 304
+      },
+      {
+        "tag": "energetic",
+        "f1": 0.5269121813031161,
+        "auc_pr": 0.5116542575766021,
+        "support": 336
+      },
+      {
+        "tag": "slow tempo",
+        "f1": 0.38472032742155526,
+        "auc_pr": 0.3738408547086544,
+        "support": 221
+      },
+      {
+        "tag": "amateur recording",
+        "f1": 0.5139072847682119,
+        "auc_pr": 0.5820023616297028,
+        "support": 263
+      },
+      {
+        "tag": "live performance",
+        "f1": 0.528957528957529,
+        "auc_pr": 0.5629878425531673,
+        "support": 219
+      },
+      {
+        "tag": "medium tempo",
+        "f1": 0.4734625105307498,
+        "auc_pr": 0.43641730608071183,
+        "support": 351
+      },
+      {
+        "tag": "mono",
+        "f1": 0.49748743718592964,
+        "auc_pr": 0.6082057372462597,
+        "support": 121
+      },
+      {
+        "tag": "acoustic drums",
+        "f1": 0.5168236877523553,
+        "auc_pr": 0.6378258246835682,
+        "support": 207
+      },
+      {
+        "tag": "fast tempo",
+        "f1": 0.5112540192926045,
+        "auc_pr": 0.5511839411948672,
+        "support": 218
+      },
+      {
+        "tag": "groovy",
+        "f1": 0.32285714285714284,
+        "auc_pr": 0.27079237551054713,
+        "support": 155
+      },
+      {
+        "tag": "groovy bass",
+        "f1": 0.3950617283950617,
+        "auc_pr": 0.3541919704523226,
+        "support": 89
+      },
+      {
+        "tag": "moderate tempo",
+        "f1": 0.55,
+        "auc_pr": 0.5548802562367691,
+        "support": 83
+      },
+      {
+        "tag": "no voices",
+        "f1": 0.484375,
+        "auc_pr": 0.574802594063601,
+        "support": 66
+      },
+      {
+        "tag": "bass guitar",
+        "f1": 0.47109207708779444,
+        "auc_pr": 0.522058662301469,
+        "support": 158
+      },
+      {
+        "tag": "electric guitar",
+        "f1": 0.4663023679417122,
+        "auc_pr": 0.5854389800311383,
+        "support": 164
+      },
+      {
+        "tag": "shimmering hi hats",
+        "f1": 0.42408376963350786,
+        "auc_pr": 0.4153138157006529,
+        "support": 84
+      },
+      {
+        "tag": "punchy kick",
+        "f1": 0.5166240409207161,
+        "auc_pr": 0.5237614321195937,
+        "support": 106
+      },
+      {
+        "tag": "male voice",
+        "f1": 0.38414634146341464,
+        "auc_pr": 0.33950648903309255,
+        "support": 96
+      },
+      {
+        "tag": "percussion",
+        "f1": 0.24347826086956523,
+        "auc_pr": 0.15410787289389904,
+        "support": 85
+      },
+      {
+        "tag": "piano",
+        "f1": 0.2923728813559322,
+        "auc_pr": 0.2703846362645996,
+        "support": 116
+      },
+      {
+        "tag": "exciting",
+        "f1": 0.16696914700544466,
+        "auc_pr": 0.14072870232430668,
+        "support": 62
+      },
+      {
+        "tag": "punchy snare",
+        "f1": 0.5454545454545454,
+        "auc_pr": 0.5128265665692858,
+        "support": 115
+      },
+      {
+        "tag": "no other instruments",
+        "f1": 0.18,
+        "auc_pr": 0.16841906966778694,
+        "support": 19
+      },
+      {
+        "tag": "acoustic guitar",
+        "f1": 0.3781094527363184,
+        "auc_pr": 0.3289135075484327,
+        "support": 178
+      },
+      {
+        "tag": "instrumental music",
+        "f1": 0.5300207039337475,
+        "auc_pr": 0.5639229545875265,
+        "support": 136
+      },
+      {
+        "tag": "bass",
+        "f1": 0.23076923076923078,
+        "auc_pr": 0.17954000646096574,
+        "support": 71
+      },
+      {
+        "tag": "male vocal",
+        "f1": 0.4743935309973046,
+        "auc_pr": 0.4491166439573489,
+        "support": 105
+      },
+      {
+        "tag": "pop",
+        "f1": 0.18461538461538463,
+        "auc_pr": 0.1523636710093132,
+        "support": 93
+      },
+      {
+        "tag": "upbeat",
+        "f1": 0.21265822784810126,
+        "auc_pr": 0.1963282074031405,
+        "support": 83
+      },
+      {
+        "tag": "romantic",
+        "f1": 0.2454212454212454,
+        "auc_pr": 0.3289561352631021,
+        "support": 91
+      },
+      {
+        "tag": "flat male vocal",
+        "f1": 0.24,
+        "auc_pr": 0.17846240291791393,
+        "support": 53
+      },
+      {
+        "tag": "happy",
+        "f1": 0.6546762589928058,
+        "auc_pr": 0.6903941886684584,
+        "support": 129
+      },
+      {
+        "tag": "rock",
+        "f1": 0.35911602209944754,
+        "auc_pr": 0.45545729201271923,
+        "support": 118
+      },
+      {
+        "tag": "cheerful",
+        "f1": 0.3010752688172043,
+        "auc_pr": 0.2567668043725397,
+        "support": 60
+      },
+      {
+        "tag": "e-bass",
+        "f1": 0.5269461077844312,
+        "auc_pr": 0.5863073897640924,
+        "support": 134
+      },
+      {
+        "tag": "uptempo",
+        "f1": 0.40559440559440557,
+        "auc_pr": 0.31589926036646343,
+        "support": 156
+      },
+      {
+        "tag": "easygoing",
+        "f1": 0.36860068259385664,
+        "auc_pr": 0.33889931913528726,
+        "support": 77
+      },
+      {
+        "tag": "mellow",
+        "f1": 0.45555555555555555,
+        "auc_pr": 0.4022058066174343,
+        "support": 82
+      },
+      {
+        "tag": "relaxing",
+        "f1": 0.4482758620689655,
+        "auc_pr": 0.5305779670243059,
+        "support": 72
+      },
+      {
+        "tag": "classical",
+        "f1": 0.3925233644859813,
+        "auc_pr": 0.36881372997190115,
+        "support": 34
+      },
+      {
+        "tag": "melodic singing",
+        "f1": 0.43171806167400884,
+        "auc_pr": 0.5940525927576242,
+        "support": 52
+      },
+      {
+        "tag": "soulful",
+        "f1": 0.25688073394495414,
+        "auc_pr": 0.285997396221427,
+        "support": 30
+      },
+      {
+        "tag": "joyful",
+        "f1": 0.09523809523809523,
+        "auc_pr": 0.07987383664880272,
+        "support": 29
+      },
+      {
+        "tag": "male singer",
+        "f1": 0.34765625,
+        "auc_pr": 0.33515591107392473,
+        "support": 120
+      },
+      {
+        "tag": "keyboard",
+        "f1": 0.3876651982378855,
+        "auc_pr": 0.3304967779988559,
+        "support": 61
+      },
+      {
+        "tag": "calming",
+        "f1": 0.5454545454545454,
+        "auc_pr": 0.655763314171706,
+        "support": 72
+      },
+      {
+        "tag": "bad audio quality",
+        "f1": 0.0970873786407767,
+        "auc_pr": 0.0619348735454488,
+        "support": 15
+      },
+      {
+        "tag": "youthful",
+        "f1": 0.49122807017543857,
+        "auc_pr": 0.5691669010755559,
+        "support": 126
+      },
+      {
+        "tag": "lively",
+        "f1": 0.4,
+        "auc_pr": 0.2984169547947751,
+        "support": 53
+      },
+      {
+        "tag": "electronic drums",
+        "f1": 0.5918367346938775,
+        "auc_pr": 0.551412534783688,
+        "support": 121
+      },
+      {
+        "tag": "poor audio quality",
+        "f1": 0.6318181818181818,
+        "auc_pr": 0.6641792727066262,
+        "support": 151
+      },
+      {
+        "tag": "spirited",
+        "f1": 0.3427495291902072,
+        "auc_pr": 0.23984117282698486,
+        "support": 124
+      },
+      {
+        "tag": "sentimental",
+        "f1": 0.2627118644067797,
+        "auc_pr": 0.3458436705573336,
+        "support": 47
+      },
+      {
+        "tag": "fun",
+        "f1": 0.6601941747572816,
+        "auc_pr": 0.7046294607269932,
+        "support": 97
+      },
+      {
+        "tag": "no singer",
+        "f1": 0.46017699115044247,
+        "auc_pr": 0.5609014508575084,
+        "support": 64
+      },
+      {
+        "tag": "melancholic",
+        "f1": 0.18333333333333332,
+        "auc_pr": 0.1462816231736908,
+        "support": 52
+      },
+      {
+        "tag": "intense",
+        "f1": 0.4731182795698925,
+        "auc_pr": 0.45686944084883374,
+        "support": 71
+      },
+      {
+        "tag": "vibrant",
+        "f1": 0.21875,
+        "auc_pr": 0.19658445908884115,
+        "support": 62
+      },
+      {
+        "tag": "no percussion",
+        "f1": 0.5131578947368421,
+        "auc_pr": 0.5625502271138787,
+        "support": 55
+      },
+      {
+        "tag": "enthusiastic",
+        "f1": 0.3517915309446254,
+        "auc_pr": 0.32271956000759283,
+        "support": 75
+      },
+      {
+        "tag": "traditional",
+        "f1": 0.6285714285714286,
+        "auc_pr": 0.6848998762996157,
+        "support": 28
+      },
+      {
+        "tag": "loud",
+        "f1": 0.2681992337164751,
+        "auc_pr": 0.1794452445372711,
+        "support": 113
+      },
+      {
+        "tag": "live recording",
+        "f1": 0.16666666666666666,
+        "auc_pr": 0.1213405878295943,
+        "support": 31
+      },
+      {
+        "tag": "medium to uptempo",
+        "f1": 0.2593516209476309,
+        "auc_pr": 0.18697262836589984,
+        "support": 67
+      },
+      {
+        "tag": "flute",
+        "f1": 0.19753086419753085,
+        "auc_pr": 0.2184830896882327,
+        "support": 32
+      },
+      {
+        "tag": "addictive",
+        "f1": 0.2513089005235602,
+        "auc_pr": 0.2969492021221199,
+        "support": 34
+      },
+      {
+        "tag": "classical music",
+        "f1": 0.14814814814814814,
+        "auc_pr": 0.13259354337807927,
+        "support": 17
+      },
+      {
+        "tag": "e-guitar",
+        "f1": 0.43304843304843305,
+        "auc_pr": 0.44639407392427993,
+        "support": 89
+      },
+      {
+        "tag": "aggressive",
+        "f1": 0.321285140562249,
+        "auc_pr": 0.4903338235068551,
+        "support": 53
+      },
+      {
+        "tag": "soothing",
+        "f1": 0.2857142857142857,
+        "auc_pr": 0.24889141610976143,
+        "support": 60
+      },
+      {
+        "tag": "jazz",
+        "f1": 0.4528301886792453,
+        "auc_pr": 0.4671306268821149,
+        "support": 31
+      },
+      {
+        "tag": "soft",
+        "f1": 0.3132530120481928,
+        "auc_pr": 0.39786300479524456,
+        "support": 53
+      },
+      {
+        "tag": "female voice",
+        "f1": 0.29473684210526313,
+        "auc_pr": 0.22858025145581343,
+        "support": 51
+      },
+      {
+        "tag": "digital drums",
+        "f1": 0.3522012578616352,
+        "auc_pr": 0.5885762364784877,
+        "support": 67
+      },
+      {
+        "tag": "keyboard accompaniment",
+        "f1": 0.2099125364431487,
+        "auc_pr": 0.1391433887695509,
+        "support": 64
+      },
+      {
+        "tag": "tutorial",
+        "f1": 0.09523809523809523,
+        "auc_pr": 0.07316325476806333,
+        "support": 13
+      },
+      {
+        "tag": "passionate male vocal",
+        "f1": 0.2564102564102564,
+        "auc_pr": 0.28024883832634895,
+        "support": 44
+      },
+      {
+        "tag": "low quality audio",
+        "f1": 0.11363636363636363,
+        "auc_pr": 0.10206062673757861,
+        "support": 25
+      },
+      {
+        "tag": "dance music",
+        "f1": 0.3072100313479624,
+        "auc_pr": 0.28347583411916066,
+        "support": 71
+      },
+      {
+        "tag": "keyboard harmony",
+        "f1": 0.3646723646723647,
+        "auc_pr": 0.3037258620296444,
+        "support": 115
+      },
+      {
+        "tag": "cello",
+        "f1": 0.33766233766233766,
+        "auc_pr": 0.31456105488542097,
+        "support": 22
+      },
+      {
+        "tag": "orchestra",
+        "f1": 0.2777777777777778,
+        "auc_pr": 0.21503376139145713,
+        "support": 37
+      },
+      {
+        "tag": "wooden percussions",
+        "f1": 0.09230769230769231,
+        "auc_pr": 0.1175263580852478,
+        "support": 6
+      },
+      {
+        "tag": "male voice singing",
+        "f1": 0.2848101265822785,
+        "auc_pr": 0.2596953564816633,
+        "support": 53
+      },
+      {
+        "tag": "suspenseful",
+        "f1": 0.5384615384615384,
+        "auc_pr": 0.5539142298430153,
+        "support": 24
+      },
+      {
+        "tag": "female vocal",
+        "f1": 0.4,
+        "auc_pr": 0.4097708406806603,
+        "support": 61
+      },
+      {
+        "tag": "live audience",
+        "f1": 0.08536585365853659,
+        "auc_pr": 0.04631154332980503,
+        "support": 15
+      },
+      {
+        "tag": "shimmering cymbals",
+        "f1": 0.16216216216216217,
+        "auc_pr": 0.1226556871603818,
+        "support": 25
+      },
+      {
+        "tag": "violin",
+        "f1": 0.10909090909090909,
+        "auc_pr": 0.112210530160775,
+        "support": 27
+      },
+      {
+        "tag": "male vocalist",
+        "f1": 0.43317972350230416,
+        "auc_pr": 0.33930693592249095,
+        "support": 71
+      },
+      {
+        "tag": "r&b",
+        "f1": 0.3157894736842105,
+        "auc_pr": 0.20517875519051776,
+        "support": 28
+      },
+      {
+        "tag": "love song",
+        "f1": 0.30601092896174864,
+        "auc_pr": 0.2919254420474271,
+        "support": 34
+      },
+      {
+        "tag": "cover",
+        "f1": 0.4731182795698925,
+        "auc_pr": 0.4561172800450943,
+        "support": 33
+      },
+      {
+        "tag": "crowd cheering",
+        "f1": 0.16666666666666666,
+        "auc_pr": 0.1307645563132234,
+        "support": 22
+      },
+      {
+        "tag": "groovy bass line",
+        "f1": 0.41148325358851673,
+        "auc_pr": 0.3574314374097833,
+        "support": 89
+      },
+      {
+        "tag": "strings",
+        "f1": 0.0,
+        "auc_pr": 0.16614290559812156,
+        "support": 79
+      },
+      {
+        "tag": "tabla",
+        "f1": 0.18604651162790697,
+        "auc_pr": 0.21489299750774268,
+        "support": 11
+      },
+      {
+        "tag": "hypnotic",
+        "f1": 0.23622047244094488,
+        "auc_pr": 0.24723573404946037,
+        "support": 26
+      },
+      {
+        "tag": "medium fast tempo",
+        "f1": 0.18181818181818182,
+        "auc_pr": 0.11599767617178924,
+        "support": 58
+      },
+      {
+        "tag": "no voice",
+        "f1": 0.10101010101010101,
+        "auc_pr": 0.08571973438610057,
+        "support": 38
+      },
+      {
+        "tag": "claps",
+        "f1": 0.2158273381294964,
+        "auc_pr": 0.1297795193023562,
+        "support": 29
+      },
+      {
+        "tag": "blues",
+        "f1": 0.09090909090909091,
+        "auc_pr": 0.23528411810418542,
+        "support": 20
+      },
+      {
+        "tag": "female singer",
+        "f1": 0.2857142857142857,
+        "auc_pr": 0.1800553658479321,
+        "support": 63
+      },
+      {
+        "tag": "reverberant",
+        "f1": 0.14035087719298245,
+        "auc_pr": 0.12871075357657188,
+        "support": 38
+      },
+      {
+        "tag": "piano accompaniment",
+        "f1": 0.2748091603053435,
+        "auc_pr": 0.2117355955167303,
+        "support": 48
+      },
+      {
+        "tag": "sustained strings melody",
+        "f1": 0.2153846153846154,
+        "auc_pr": 0.17812867592774992,
+        "support": 22
+      },
+      {
+        "tag": "dj",
+        "f1": 0.35454545454545455,
+        "auc_pr": 0.3482248383638248,
+        "support": 61
+      },
+      {
+        "tag": "ambient",
+        "f1": 0.32142857142857145,
+        "auc_pr": 0.27734994471387603,
+        "support": 47
+      },
+      {
+        "tag": "electronic music",
+        "f1": 0.38910505836575876,
+        "auc_pr": 0.40796345658800165,
+        "support": 90
+      },
+      {
+        "tag": "trumpets",
+        "f1": 0.2127659574468085,
+        "auc_pr": 0.19944082730865934,
+        "support": 27
+      },
+      {
+        "tag": "vocal harmony",
+        "f1": 0.2631578947368421,
+        "auc_pr": 0.2520950618486856,
+        "support": 44
+      },
+      {
+        "tag": "urban",
+        "f1": 0.23529411764705882,
+        "auc_pr": 0.3208826824125737,
+        "support": 14
+      },
+      {
+        "tag": "saxophone",
+        "f1": 0.08695652173913043,
+        "auc_pr": 0.20042570980913246,
+        "support": 20
+      },
+      {
+        "tag": "programmed percussion",
+        "f1": 0.5245901639344263,
+        "auc_pr": 0.5203829237289145,
+        "support": 20
+      },
+      {
+        "tag": "accordion",
+        "f1": 0.2857142857142857,
+        "auc_pr": 0.21127005930945744,
+        "support": 20
+      },
+      {
+        "tag": "sad",
+        "f1": 0.23255813953488372,
+        "auc_pr": 0.26197420735714927,
+        "support": 35
+      },
+      {
+        "tag": "shimmering shakers",
+        "f1": 0.26666666666666666,
+        "auc_pr": 0.2498602654139589,
+        "support": 41
+      },
+      {
+        "tag": "electric guitar melody",
+        "f1": 0.041666666666666664,
+        "auc_pr": 0.03604950783109833,
+        "support": 19
+      },
+      {
+        "tag": "movie soundtrack",
+        "f1": 0.36363636363636365,
+        "auc_pr": 0.4473907792788212,
+        "support": 27
+      },
+      {
+        "tag": "playful",
+        "f1": 0.0,
+        "auc_pr": 0.09707622520197606,
+        "support": 41
+      },
+      {
+        "tag": "steady drumming rhythm",
+        "f1": 0.32142857142857145,
+        "auc_pr": 0.27720317530773675,
+        "support": 51
+      },
+      {
+        "tag": "groovy rhythm",
+        "f1": 0.2048780487804878,
+        "auc_pr": 0.14038903935017513,
+        "support": 33
+      },
+      {
+        "tag": "synth sounds",
+        "f1": 0.1111111111111111,
+        "auc_pr": 0.1159147360688132,
+        "support": 20
+      },
+      {
+        "tag": "violins",
+        "f1": 0.07407407407407407,
+        "auc_pr": 0.08623537501739174,
+        "support": 16
+      },
+      {
+        "tag": "club music",
+        "f1": 0.4079601990049751,
+        "auc_pr": 0.5413483222624322,
+        "support": 45
+      },
+      {
+        "tag": "funky",
+        "f1": 0.0,
+        "auc_pr": 0.03839669959721026,
+        "support": 16
+      },
+      {
+        "tag": "passionate female vocal",
+        "f1": 0.2912621359223301,
+        "auc_pr": 0.2625937319759731,
+        "support": 40
+      },
+      {
+        "tag": "eerie",
+        "f1": 0.3157894736842105,
+        "auc_pr": 0.26244559909977294,
+        "support": 35
+      },
+      {
+        "tag": "guitar solo",
+        "f1": 0.058823529411764705,
+        "auc_pr": 0.31013073353431,
+        "support": 33
+      },
+      {
+        "tag": "hip-hop",
+        "f1": 0.12987012987012986,
+        "auc_pr": 0.09910437352226806,
+        "support": 26
+      },
+      {
+        "tag": "buoyant",
+        "f1": 0.4166666666666667,
+        "auc_pr": 0.28725295761289454,
+        "support": 43
+      },
+      {
+        "tag": "trumpet",
+        "f1": 0.0,
+        "auc_pr": 0.10394355847159395,
+        "support": 13
+      },
+      {
+        "tag": "groovy piano melody",
+        "f1": 0.16666666666666666,
+        "auc_pr": 0.0925172104933909,
+        "support": 15
+      },
+      {
+        "tag": "happy mood",
+        "f1": 0.4057971014492754,
+        "auc_pr": 0.25753071268013455,
+        "support": 22
+      },
+      {
+        "tag": "electro",
+        "f1": 0.2706766917293233,
+        "auc_pr": 0.33941060183616484,
+        "support": 33
+      },
+      {
+        "tag": "male voice speaking",
+        "f1": 0.0,
+        "auc_pr": 0.0030530569805879526,
+        "support": 2
+      },
+      {
+        "tag": "synth",
+        "f1": 0.18604651162790697,
+        "auc_pr": 0.15323147401610165,
+        "support": 33
+      },
+      {
+        "tag": "tambourine",
+        "f1": 0.07272727272727272,
+        "auc_pr": 0.1332709928432654,
+        "support": 52
+      },
+      {
+        "tag": "single instrument",
+        "f1": 0.6923076923076923,
+        "auc_pr": 0.7283243522469268,
+        "support": 25
+      },
+      {
+        "tag": "dramatic",
+        "f1": 0.3448275862068966,
+        "auc_pr": 0.24354093576237476,
+        "support": 19
+      },
+      {
+        "tag": "engaging",
+        "f1": 0.2597402597402597,
+        "auc_pr": 0.2156916291219438,
+        "support": 42
+      },
+      {
+        "tag": "reggae",
+        "f1": 0.37209302325581395,
+        "auc_pr": 0.32937009500993775,
+        "support": 29
+      },
+      {
+        "tag": "chill",
+        "f1": 0.0,
+        "auc_pr": 0.3801699343678137,
+        "support": 20
+      },
+      {
+        "tag": "groovy bass guitar",
+        "f1": 0.3333333333333333,
+        "auc_pr": 0.23846598162195853,
+        "support": 32
+      },
+      {
+        "tag": "upright bass",
+        "f1": 0.3389830508474576,
+        "auc_pr": 0.24960988227339795,
+        "support": 31
+      },
+      {
+        "tag": "folk music",
+        "f1": 0.18604651162790697,
+        "auc_pr": 0.14781882628372014,
+        "support": 30
+      },
+      {
+        "tag": "acoustic rhythm guitar",
+        "f1": 0.14545454545454545,
+        "auc_pr": 0.12920537787424674,
+        "support": 34
+      },
+      {
+        "tag": "dance song",
+        "f1": 0.3125,
+        "auc_pr": 0.3687548904297673,
+        "support": 7
+      },
+      {
+        "tag": "gospel",
+        "f1": 0.5263157894736842,
+        "auc_pr": 0.690696709919399,
+        "support": 13
+      },
+      {
+        "tag": "devotional",
+        "f1": 0.2222222222222222,
+        "auc_pr": 0.385247930105288,
+        "support": 20
+      },
+      {
+        "tag": "percussive bass line",
+        "f1": 0.12173913043478261,
+        "auc_pr": 0.08873031732436776,
+        "support": 19
+      },
+      {
+        "tag": "punchy",
+        "f1": 0.2773722627737226,
+        "auc_pr": 0.19256287967133426,
+        "support": 36
+      },
+      {
+        "tag": "trombone",
+        "f1": 0.36363636363636365,
+        "auc_pr": 0.19711990211413297,
+        "support": 7
+      },
+      {
+        "tag": "distorted",
+        "f1": 0.26666666666666666,
+        "auc_pr": 0.27730352991119867,
+        "support": 37
+      },
+      {
+        "tag": "tuba",
+        "f1": 0.3333333333333333,
+        "auc_pr": 0.3203623375206972,
+        "support": 5
+      },
+      {
+        "tag": "wind instrument",
+        "f1": 0.13953488372093023,
+        "auc_pr": 0.1418831728120643,
+        "support": 19
+      },
+      {
+        "tag": "jam",
+        "f1": 0.6181818181818182,
+        "auc_pr": 0.7381713560151411,
+        "support": 30
+      },
+      {
+        "tag": "folk",
+        "f1": 0.09302325581395349,
+        "auc_pr": 0.16377845549133757,
+        "support": 36
+      },
+      {
+        "tag": "reverb",
+        "f1": 0.0,
+        "auc_pr": 0.017785052690999243,
+        "support": 30
+      },
+      {
+        "tag": "powerful",
+        "f1": 0.0,
+        "auc_pr": 0.06772289579860583,
+        "support": 33
+      },
+      {
+        "tag": "harpsichord",
+        "f1": 0.0,
+        "auc_pr": 0.009814504225073331,
+        "support": 3
+      },
+      {
+        "tag": "guitar",
+        "f1": 0.0,
+        "auc_pr": 0.03003694860706394,
+        "support": 17
+      },
+      {
+        "tag": "danceable",
+        "f1": 0.29850746268656714,
+        "auc_pr": 0.3231091138230763,
+        "support": 19
+      },
+      {
+        "tag": "harmonica",
+        "f1": 0.0,
+        "auc_pr": 0.14515835886441886,
+        "support": 7
+      },
+      {
+        "tag": "string section",
+        "f1": 0.24390243902439024,
+        "auc_pr": 0.2599547656704172,
+        "support": 30
+      },
+      {
+        "tag": "meditative",
+        "f1": 0.0,
+        "auc_pr": 0.19508456475157532,
+        "support": 30
+      },
+      {
+        "tag": "groovy music",
+        "f1": 0.21768707482993196,
+        "auc_pr": 0.13179056142061618,
+        "support": 25
+      },
+      {
+        "tag": "muffled",
+        "f1": 0.0975609756097561,
+        "auc_pr": 0.1397073968796807,
+        "support": 30
+      },
+      {
+        "tag": "ambient sounds",
+        "f1": 0.0,
+        "auc_pr": 0.025738395962115523,
+        "support": 9
+      },
+      {
+        "tag": "meditation music",
+        "f1": 0.2962962962962963,
+        "auc_pr": 0.13643759952986886,
+        "support": 5
+      },
+      {
+        "tag": "male vocals",
+        "f1": 0.12121212121212122,
+        "auc_pr": 0.09974380556715443,
+        "support": 23
+      },
+      {
+        "tag": "higher pitch",
+        "f1": 0.0,
+        "auc_pr": 0.004299135090260659,
+        "support": 2
+      },
+      {
+        "tag": "clarinet",
+        "f1": 0.0,
+        "auc_pr": 0.045554596650992825,
+        "support": 10
+      },
+      {
+        "tag": "pop song",
+        "f1": 0.20512820512820512,
+        "auc_pr": 0.25159029745826716,
+        "support": 25
+      },
+      {
+        "tag": "trippy",
+        "f1": 0.26229508196721313,
+        "auc_pr": 0.2378300351660528,
+        "support": 32
+      },
+      {
+        "tag": "mysterious",
+        "f1": 0.0,
+        "auc_pr": 0.13966734336309222,
+        "support": 21
+      },
+      {
+        "tag": "dreamy",
+        "f1": 0.0,
+        "auc_pr": 0.13543203671695453,
+        "support": 24
+      },
+      {
+        "tag": "spiritual",
+        "f1": 0.0,
+        "auc_pr": 0.24999503323311348,
+        "support": 7
+      },
+      {
+        "tag": "weird",
+        "f1": 0.0,
+        "auc_pr": 0.024879367505907656,
+        "support": 12
+      },
+      {
+        "tag": "epic",
+        "f1": 0.0,
+        "auc_pr": 0.1803327552668703,
+        "support": 28
+      },
+      {
+        "tag": "western classical music",
+        "f1": 0.4444444444444444,
+        "auc_pr": 0.44575441316025644,
+        "support": 9
+      },
+      {
+        "tag": "backup singers",
+        "f1": 0.3488372093023256,
+        "auc_pr": 0.4523934751193779,
+        "support": 17
+      },
+      {
+        "tag": "scratching",
+        "f1": 0.2857142857142857,
+        "auc_pr": 0.28608225817201727,
+        "support": 10
+      },
+      {
+        "tag": "rich",
+        "f1": 0.0,
+        "auc_pr": 0.029513888888888888,
+        "support": 2
+      },
+      {
+        "tag": "brass melody",
+        "f1": 0.0,
+        "auc_pr": 0.04244474196264176,
+        "support": 6
+      },
+      {
+        "tag": "clapping",
+        "f1": 0.0,
+        "auc_pr": 0.07999503095421374,
+        "support": 50
+      },
+      {
+        "tag": "organ",
+        "f1": 0.0,
+        "auc_pr": 0.05321601748606876,
+        "support": 15
+      }
+    ]
+  },
+  "history": {
+    "epoch": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "phase": [
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "frozen",
+      "fine_tune",
+      "fine_tune",
+      "fine_tune",
+      "fine_tune",
+      "fine_tune"
+    ],
+    "train_loss": [
+      0.8117309208710989,
+      0.7158576011657715,
+      0.6379421315590541,
+      0.5912964411576589,
+      0.5589665720860163,
+      0.5395396598180136,
+      0.5267593584458033,
+      0.5157566710313162,
+      0.5078833361466726,
+      0.5005000001192093,
+      0.5005379835764567,
+      0.5004115392764409,
+      0.4427925137678782,
+      0.37967974493900936,
+      0.34813747704029085,
+      0.32967264344294867,
+      0.3176585301756859
+    ],
+    "val_loss": [
+      0.7422854171858894,
+      0.6590938170750936,
+      0.5951253639327155,
+      0.5636840528912015,
+      0.542687777015898,
+      0.5267296599017249,
+      0.51714316672749,
+      0.5092720290025076,
+      0.5053047372235192,
+      0.502566827668084,
+      0.5016042159663306,
+      0.5012784832053714,
+      0.4129848844475216,
+      0.383236375119951,
+      0.37287627988391453,
+      0.36528776751624215,
+      0.36199319031503463
+    ],
+    "val_macro_f1": [
+      0.048824326538525725,
+      0.07455475928895088,
+      0.10478584105115347,
+      0.1409214388420033,
+      0.15611548663915248,
+      0.17140873023649342,
+      0.17411622183480177,
+      0.17498632645768641,
+      0.18262274580987126,
+      0.18461287717737412,
+      0.18605270624036918,
+      0.1854885493576111,
+      0.25079866431664405,
+      0.275350751840823,
+      0.28218115607334526,
+      0.2904187696648993,
+      0.2960884536852266
+    ],
+    "val_micro_f1": [
+      0.2459807073954984,
+      0.27651858567543064,
+      0.2762217500482905,
+      0.2821176064838765,
+      0.27605089386374615,
+      0.28322711021296443,
+      0.2833026396562308,
+      0.2866915422885572,
+      0.2871150605178489,
+      0.2899628252788104,
+      0.29105058365758757,
+      0.2909204173804703,
+      0.32261940522679483,
+      0.35590706870983685,
+      0.3641861246430371,
+      0.37119019240592543,
+      0.3791485664639444
+    ]
+  },
+  "examples": [
+    {
+      "ytid": "-0Gj8-vB1q4",
+      "caption": "The low quality recording features a ballad song that contains sustained strings, mellow piano melody and soft female vocal singing over it. It sounds sad and soulful, like something you would hear at Sunday services.",
+      "true_tags_in_vocabulary": [
+        "low quality",
+        "soulful",
+        "sustained strings melody",
+        "sad"
+      ],
+      "top_5_predictions": [
+        {
+          "tag": "emotional",
+          "probability": 0.9927791953086853
+        },
+        {
+          "tag": "passionate",
+          "probability": 0.9909532070159912
+        },
+        {
+          "tag": "low quality",
+          "probability": 0.9770623445510864
+        },
+        {
+          "tag": "mellow",
+          "probability": 0.7857091426849365
+        },
+        {
+          "tag": "sustained strings melody",
+          "probability": 0.7414056658744812
+        }
+      ]
+    },
+    {
+      "ytid": "-0vPFx-wRRI",
+      "caption": "a male voice is singing a melody with changing tempos while snipping his fingers rhythmically. The recording sounds like it has been recorded in an empty room. This song may be playing, practicing snipping and singing along.",
+      "true_tags_in_vocabulary": [
+        "amateur recording",
+        "reverb"
+      ],
+      "top_5_predictions": [
+        {
+          "tag": "uptempo",
+          "probability": 0.8891246914863586
+        },
+        {
+          "tag": "medium tempo",
+          "probability": 0.8855307698249817
+        },
+        {
+          "tag": "amateur recording",
+          "probability": 0.8190312385559082
+        },
+        {
+          "tag": "medium to uptempo",
+          "probability": 0.7883241772651672
+        },
+        {
+          "tag": "e-bass",
+          "probability": 0.7204805016517639
+        }
+      ]
+    },
+    {
+      "ytid": "-0xzrMun0Rs",
+      "caption": "This song contains digital drums playing a simple groove along with two guitars. One strumming chords along with the snare the other one playing a melody on top. An e-bass is playing the footnote while a piano is playing a major and minor chord progression. A trumpet is playing a loud melody alongside the guitar. All the instruments sound flat and are being played by a keyboard. There are little bongo hits in the background panned to the left side of the speakers. Apart from the music you can hear eating sounds and a stomach rumbling. This song may be playing for an advertisement.",
+      "true_tags_in_vocabulary": [
+        "medium tempo",
+        "piano",
+        "acoustic guitar",
+        "e-bass",
+        "digital drums",
+        "trumpet"
+      ],
+      "top_5_predictions": [
+        {
+          "tag": "acoustic drums",
+          "probability": 0.9687674641609192
+        },
+        {
+          "tag": "e-bass",
+          "probability": 0.9621212482452393
+        },
+        {
+          "tag": "piano",
+          "probability": 0.9418916702270508
+        },
+        {
+          "tag": "medium to uptempo",
+          "probability": 0.9412177801132202
+        },
+        {
+          "tag": "male voice singing",
+          "probability": 0.915692150592804
+        }
+      ]
+    },
+    {
+      "ytid": "-1OlgJWehn8",
+      "caption": "This clip is three tracks playing consecutively. The first one is an electric guitar lead harmony with a groovy bass line, followed by white noise and then a female vocalisation to a vivacious melody with a keyboard harmony, slick drumming, funky bass lines and male backup. The three songs are unrelated and unsynced.",
+      "true_tags_in_vocabulary": [
+        "instrumental",
+        "bass guitar",
+        "keyboard harmony"
+      ],
+      "top_5_predictions": [
+        {
+          "tag": "groovy",
+          "probability": 0.9016708135604858
+        },
+        {
+          "tag": "energetic",
+          "probability": 0.8761731386184692
+        },
+        {
+          "tag": "rock",
+          "probability": 0.8707593083381653
+        },
+        {
+          "tag": "groovy bass",
+          "probability": 0.8070372343063354
+        },
+        {
+          "tag": "punchy kick",
+          "probability": 0.7541481256484985
+        }
+      ]
+    },
+    {
+      "ytid": "-1UWSisR2zo",
+      "caption": "A male singer sings this groovy melody. The song is a techno dance song with a groovy bass line, strong drumming rhythm and a keyboard accompaniment. The song is so groovy and serves as a dance track for the dancing children. The audio quality is very poor with high gains and hissing noise.",
+      "true_tags_in_vocabulary": [
+        "live performance",
+        "medium tempo",
+        "male singer",
+        "poor audio quality",
+        "keyboard accompaniment",
+        "groovy bass line"
+      ],
+      "top_5_predictions": [
+        {
+          "tag": "bad audio quality",
+          "probability": 0.9745672345161438
+        },
+        {
+          "tag": "instrumental music",
+          "probability": 0.973969578742981
+        },
+        {
+          "tag": "male singer",
+          "probability": 0.9683129191398621
+        },
+        {
+          "tag": "medium tempo",
+          "probability": 0.947097659111023
+        },
+        {
+          "tag": "poor audio quality",
+          "probability": 0.9336432218551636
+        }
+      ]
+    }
+  ],
+  "training_time_seconds": 196.79302883148193,
+  "device": "cuda",
+  "seed": 42
+}
