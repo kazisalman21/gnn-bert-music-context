@@ -1,0 +1,86 @@
+{
+  "musiccaps": {
+    "protocol": "AudioSet eval=test; non-eval deterministic 90/10 train/validation",
+    "counts": {
+      "train": 2396,
+      "val": 267,
+      "test": 2858
+    },
+    "unique_ytid": 5521,
+    "overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "task1_vocabulary_size": 191,
+    "task1_min_training_frequency": 20
+  },
+  "mtat": {
+    "protocol": "official MTAT shards: 0-b train, c validation, d-f test",
+    "counts": {
+      "train": 18709,
+      "val": 1825,
+      "test": 5329
+    },
+    "shards": {
+      "train": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "a",
+        "b"
+      ],
+      "val": [
+        "c"
+      ],
+      "test": [
+        "d",
+        "e",
+        "f"
+      ]
+    },
+    "duplicate_clip_ids_within_split": {
+      "train": 0,
+      "val": 0,
+      "test": 0
+    },
+    "clip_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "artist_overlap": {
+      "train_val": 13,
+      "train_test": 45,
+      "val_test": 8
+    },
+    "exact_song_tuple_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    }
+  },
+  "gtzan": {
+    "protocol": "seeded per-genre group split (SHA-256 exact-audio groups), approximately 80/10/10",
+    "counts": {
+      "train": 797,
+      "val": 99,
+      "test": 103
+    },
+    "track_id_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "exact_audio_duplicate_groups": 14,
+    "cross_split_exact_audio_duplicate_groups": 0,
+    "hash_algorithm": "SHA-256 over source WAV bytes"
+  }
+}
