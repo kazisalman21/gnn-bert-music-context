@@ -1,0 +1,430 @@
+{
+  "task": "Task 4: Cross-modal MusicCaps alignment",
+  "dataset": "MusicCaps public metadata with recovered real YouTube intervals",
+  "split_counts": {
+    "train": 184,
+    "val": 42,
+    "test": 104
+  },
+  "sample_reduction_note": "Only source videos successfully recovered at their published MusicCaps intervals are used. No missing clip is replaced or synthesized.",
+  "caption_to_audio": {
+    "R@1": 0.009615384973585606,
+    "R@5": 0.03846153989434242,
+    "R@10": 0.07692307978868484
+  },
+  "audio_to_caption": {
+    "R@1": 0.01923076994717121,
+    "R@5": 0.048076923936605453,
+    "R@10": 0.07692307978868484
+  },
+  "test_loss": 3.1299943327903748,
+  "validation_metrics_at_best_checkpoint": {
+    "caption_to_audio": {
+      "R@1": 0.02380952425301075,
+      "R@5": 0.1428571492433548,
+      "R@10": 0.261904776096344
+    },
+    "audio_to_caption": {
+      "R@1": 0.0,
+      "R@5": 0.1428571492433548,
+      "R@10": 0.2142857164144516
+    }
+  },
+  "random_retrieval_baseline": {
+    "caption_to_audio": {
+      "R@1": 0.009615384615384616,
+      "R@5": 0.04807692307692308,
+      "R@10": 0.09615384615384616
+    },
+    "audio_to_caption": {
+      "R@1": 0.009615384615384616,
+      "R@5": 0.04807692307692308,
+      "R@10": 0.09615384615384616
+    }
+  },
+  "untrained_initialization_test_metrics": {
+    "caption_to_audio": {
+      "R@1": 0.01923076994717121,
+      "R@5": 0.057692307978868484,
+      "R@10": 0.07692307978868484
+    },
+    "audio_to_caption": {
+      "R@1": 0.009615384973585606,
+      "R@5": 0.03846153989434242,
+      "R@10": 0.09615384787321091
+    }
+  },
+  "history": {
+    "epoch": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "train_loss": [
+      3.4691188732783,
+      3.3881237506866455,
+      3.31304923693339,
+      3.1037282148996987,
+      2.8841610749562583,
+      2.601656715075175,
+      2.5624013344446817,
+      2.2893923123677573,
+      2.155445178349813,
+      1.9823696811993916
+    ],
+    "val_loss": [
+      2.895112633705139,
+      2.905310869216919,
+      2.9775363206863403,
+      3.340794324874878,
+      3.3766772747039795,
+      3.5549392700195312,
+      3.66139817237854,
+      3.9376968145370483,
+      3.982934594154358,
+      4.124505281448364
+    ],
+    "val_mean_r5": [
+      0.1071428582072258,
+      0.1428571492433548,
+      0.095238097012043,
+      0.05952381156384945,
+      0.05952381156384945,
+      0.05952381156384945,
+      0.0833333358168602,
+      0.05952381156384945,
+      0.1190476194024086,
+      0.05952381156384945
+    ]
+  },
+  "best_epoch": 2,
+  "best_validation_mean_r5": 0.1428571492433548,
+  "training_time_seconds": 7.36371374130249,
+  "parameter_counts": {
+    "total": 66777600,
+    "trainable": 414720
+  },
+  "qualitative_examples_file": "retrieval_examples/task4_top3_retrievals.json",
+  "qualitative_example_count": 10,
+  "zero_shot_tag_transfer": {
+    "labels": [
+      "classical",
+      "techno",
+      "electronic",
+      "rock",
+      "pop",
+      "country",
+      "metal",
+      "indian",
+      "opera",
+      "new age",
+      "dance",
+      "classic",
+      "slow",
+      "fast",
+      "ambient",
+      "loud",
+      "quiet",
+      "soft",
+      "weird"
+    ],
+    "ground_truth": "exact matches in MusicCaps aspect_list",
+    "task4_caption_to_tag_prompt": {
+      "macro_f1": 0.01579940850915587,
+      "micro_f1": 0.01606425702811245,
+      "macro_precision": 0.008097165991902832,
+      "macro_recall": 0.47368421052631576,
+      "micro_precision": 0.008097165991902834,
+      "micro_recall": 1.0,
+      "mean_auc_pr": 0.0713266042896549,
+      "threshold": 0.1,
+      "num_samples": 104,
+      "num_tags": 19,
+      "per_tag": [
+        {
+          "tag": "classical",
+          "f1": 0.01904761904761905,
+          "auc_pr": 0.1111111111111111,
+          "support": 1
+        },
+        {
+          "tag": "techno",
+          "f1": 0.03773584905660377,
+          "auc_pr": 0.02505896226415094,
+          "support": 2
+        },
+        {
+          "tag": "electronic",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "rock",
+          "f1": 0.03773584905660377,
+          "auc_pr": 0.08703703703703704,
+          "support": 2
+        },
+        {
+          "tag": "pop",
+          "f1": 0.09174311926605505,
+          "auc_pr": 0.130469341181608,
+          "support": 5
+        },
+        {
+          "tag": "country",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "metal",
+          "f1": 0.01904761904761905,
+          "auc_pr": 0.14285714285714285,
+          "support": 1
+        },
+        {
+          "tag": "indian",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "opera",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "new age",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "dance",
+          "f1": 0.01904761904761905,
+          "auc_pr": 0.03125,
+          "support": 1
+        },
+        {
+          "tag": "classic",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "slow",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "fast",
+          "f1": 0.01904761904761905,
+          "auc_pr": 0.02,
+          "support": 1
+        },
+        {
+          "tag": "ambient",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "loud",
+          "f1": 0.03773584905660377,
+          "auc_pr": 0.05844155844155845,
+          "support": 2
+        },
+        {
+          "tag": "quiet",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "soft",
+          "f1": 0.01904761904761905,
+          "auc_pr": 0.03571428571428571,
+          "support": 1
+        },
+        {
+          "tag": "weird",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        }
+      ]
+    },
+    "task4_threshold_tuned_on_validation": 0.1,
+    "task3_cross_attention_direct_transfer": {
+      "macro_f1": 0.02321187584345479,
+      "micro_f1": 0.044444444444444446,
+      "macro_precision": 0.013845803319487529,
+      "macro_recall": 0.07368421052631578,
+      "micro_precision": 0.024390243902439025,
+      "micro_recall": 0.25,
+      "mean_auc_pr": 0.08910227528268604,
+      "threshold": 0.7500000000000002,
+      "num_samples": 104,
+      "num_tags": 19,
+      "per_tag": [
+        {
+          "tag": "classical",
+          "f1": 0.0,
+          "auc_pr": 0.14285714285714285,
+          "support": 1
+        },
+        {
+          "tag": "techno",
+          "f1": 0.13333333333333333,
+          "auc_pr": 0.14939024390243902,
+          "support": 2
+        },
+        {
+          "tag": "electronic",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "rock",
+          "f1": 0.15384615384615385,
+          "auc_pr": 0.05656565656565657,
+          "support": 2
+        },
+        {
+          "tag": "pop",
+          "f1": 0.15384615384615385,
+          "auc_pr": 0.2004147604524082,
+          "support": 5
+        },
+        {
+          "tag": "country",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "metal",
+          "f1": 0.0,
+          "auc_pr": 0.05263157894736842,
+          "support": 1
+        },
+        {
+          "tag": "indian",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "opera",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "new age",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "dance",
+          "f1": 0.0,
+          "auc_pr": 0.030303030303030304,
+          "support": 1
+        },
+        {
+          "tag": "classic",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "slow",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "fast",
+          "f1": 0.0,
+          "auc_pr": 0.020833333333333332,
+          "support": 1
+        },
+        {
+          "tag": "ambient",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "loud",
+          "f1": 0.0,
+          "auc_pr": 0.06559139784946236,
+          "support": 2
+        },
+        {
+          "tag": "quiet",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        },
+        {
+          "tag": "soft",
+          "f1": 0.0,
+          "auc_pr": 0.08333333333333333,
+          "support": 1
+        },
+        {
+          "tag": "weird",
+          "f1": 0.0,
+          "auc_pr": null,
+          "support": 0
+        }
+      ]
+    }
+  },
+  "device": "cuda",
+  "provenance": {
+    "experiment_signature": "815b1486cbf631e465ac623ff20c1d9b9d43c66bdce55026e058ccb77a9a26ac",
+    "experiment_version": "task4-musiccaps-real-audio-v1",
+    "seed": 42,
+    "split_sha256": {
+      "train": "890709676e9e313c145ae3b0a6928458d5cecf20361e94994e841b6dbf7b41b3",
+      "val": "722a909e16062ade327ddbfff3d724a45b3c4a652d025b33721bf0b8eb985382",
+      "test": "acfbbfd0b5a2db2a933de237e44d02aab6d48e823d6502f4580dcf32e830266a"
+    },
+    "usable_ids_sha256": {
+      "train": "ab529b84c1efc421c42c4aeaf4b4d89c996c04b47ea87aa6a0b78cf714ab2615",
+      "val": "e9ac7fc1a2f0aee6b466ff68416248cbea8ab52c1f83a59d9a7a2eada8370084",
+      "test": "b8e204c008b619c624165955c4b8fe9603520c77606ca5cc01fb6ffe309eb96b"
+    },
+    "split_counts": {
+      "train": 184,
+      "val": 42,
+      "test": 104
+    },
+    "feature_dim": 77,
+    "temperature": 0.07,
+    "projection_dim": 256,
+    "freeze_bert": true,
+    "training": {
+      "batch_size": 32,
+      "epochs": 40,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "early_stopping_patience": 8,
+      "epochs_requested": 40
+    }
+  }
+}

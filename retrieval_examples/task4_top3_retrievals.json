@@ -1,0 +1,312 @@
+[
+  {
+    "query_index": 0,
+    "query_caption": "A male singer sings this aggressive vocal. The song is medium tempo with a slick drumming rhythm, groovy bass line, sonic tones, keyboard harmony and various percussive hits. The song is a modern electronic dance music with trance influences. The song has bad quality audio issues.",
+    "paired_ytid": "2ZgEbNi--8Q",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "2f1UXGix_Cw",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.4605443477630615,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 2,
+        "ytid": "2x4694ExyCU",
+        "start_s": 310.0,
+        "end_s": 320.0,
+        "similarity": 0.453918993473053,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "3Z74i_FWs3o",
+        "start_s": 110.0,
+        "end_s": 120.0,
+        "similarity": 0.4394618272781372,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 1,
+    "query_caption": "This song is a mandolin instrumental. The tempo is medium with a lively melody on the mandolin. The music is minimalist without  any other instruments. The music is high pitched, melodious and charming. This audio ends abruptly indicating that this could be a mandolin tutorial.",
+    "paired_ytid": "2ZogsGp-T4o",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "4L9KyVVsQOc",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.35819700360298157,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 2,
+        "ytid": "4S4NDnNTptY",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.3543798625469208,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "4Mo7tdV2LZk",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.34883615374565125,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 2,
+    "query_caption": "The clip sounds like a live performance of Hawaiian Luau music. The song has a generally positive and uplifting effect - it can put you into a good mood. There are several layers of guitars. There's also a main string instrument that plays arpeggiated notes.",
+    "paired_ytid": "2_Vk3tmqz-0",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "2_Vk3tmqz-0",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.3653917610645294,
+        "is_paired_clip": true
+      },
+      {
+        "rank": 2,
+        "ytid": "3EtbIWF_ynU",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.3272392153739929,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "3w4nFQrUQ8k",
+        "start_s": 20.0,
+        "end_s": 30.0,
+        "similarity": 0.3100607693195343,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 3,
+    "query_caption": "This song contains background noises such as a goat sound, wind blowing and very low horns blowing one note. Then the music comes in with a string section playing a short stroke melody. This song may be playing in a war/adventure video-game.",
+    "paired_ytid": "2_kLD3IbF2c",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "2xGRCsW6-Bk",
+        "start_s": 100.0,
+        "end_s": 110.0,
+        "similarity": 0.33718252182006836,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 2,
+        "ytid": "31O2j4aAgYU",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.33221033215522766,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "2ZogsGp-T4o",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.31282147765159607,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 4,
+    "query_caption": "The low quality recording features a wide, soft whispering male vocals singing over a wide electric guitar melody, shimmering cymbals and drum roll. In the second part of the loop there is an energetic male vocal singing over more energetic electric guitar chords, distorted bass, punchy kick and snare hits and shimmering cymbals. It sounds energetic, aggressive, but also messy and kind of chaotic, since the mix is dirty.",
+    "paired_ytid": "2aPVOidHLXI",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "3Z74i_FWs3o",
+        "start_s": 110.0,
+        "end_s": 120.0,
+        "similarity": 0.49619489908218384,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 2,
+        "ytid": "2f1UXGix_Cw",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.4901648759841919,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "2vQTq4QLP8U",
+        "start_s": 100.0,
+        "end_s": 110.0,
+        "similarity": 0.4715558588504791,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 5,
+    "query_caption": "This low quality recording features a male voice singing the main melody in a foreign language. This is accompanied by percussion playing a simple beat with a Latin feel. The bass is played on a double bass. The double bass plays a groovy bassline. Flute fills are played in the background. An accordion plays melodies in harmony with the voice. This song has romantic overtones. This song can be played at the end credits of a mafia romance movie.",
+    "paired_ytid": "2bCuw7U_Rac",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "4W8BYc8ZMaE",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.31300538778305054,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 2,
+        "ytid": "4Psj5jYa7a4",
+        "start_s": 20.0,
+        "end_s": 30.0,
+        "similarity": 0.300438791513443,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "2aPVOidHLXI",
+        "start_s": 190.0,
+        "end_s": 200.0,
+        "similarity": 0.27750566601753235,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 6,
+    "query_caption": "A male singer sings this passionate melody. The song is medium tempo with Latin percussion, guiro percussions, guitar rhythm, piano accompaniment and guitar rhythm. The song is romantic and spirited. The song is a Latin dance song with poor audio quality.",
+    "paired_ytid": "2cxvYC9QZac",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "2cxvYC9QZac",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.4358614981174469,
+        "is_paired_clip": true
+      },
+      {
+        "rank": 2,
+        "ytid": "2xQuWif8axE",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.35120144486427307,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "2juYRZnhF3g",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.34278297424316406,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 7,
+    "query_caption": "The low quality recording features a traditional song that consists of passionate female vocal singing over wooden percussive elements, strings and flute melody. It sounds passionate, emotional and soulful and the recording is noisy and in mono.",
+    "paired_ytid": "2dyEnOo3yJ8",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "4Mo7tdV2LZk",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.5021677613258362,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 2,
+        "ytid": "2dyxjGTXSpA",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.4998168349266052,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "3mNOJpN_qOQ",
+        "start_s": 190.0,
+        "end_s": 200.0,
+        "similarity": 0.47300270199775696,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 8,
+    "query_caption": "A male vocalist sings this intense melody in a foreign language.The tempo is slow with a keyboard and organ accompaniment that is burgeoning as the song progresses. The vocals are eloquent, emphatic, persuasive and lilting and the vibe of the song is mellow, persuasive, passionate, emotional and appealing.",
+    "paired_ytid": "2dyxjGTXSpA",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "2cxvYC9QZac",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.42433857917785645,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 2,
+        "ytid": "3mNOJpN_qOQ",
+        "start_s": 190.0,
+        "end_s": 200.0,
+        "similarity": 0.40136978030204773,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 3,
+        "ytid": "2xQuWif8axE",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.36572256684303284,
+        "is_paired_clip": false
+      }
+    ]
+  },
+  {
+    "query_index": 9,
+    "query_caption": "The low quality recording features a techno song that consists of a compilation of sounds. The first version is thin and crushed, as it was played on a speaker and recorded with a poor microphone. The second version is the actual song being played, which consists of a \"4 on the floor\" kick patter, wide percussive elements and shimmering open hats. The final, third version is crushed, distorted and heavy as it consists of very loud kick punches.",
+    "paired_ytid": "2f1UXGix_Cw",
+    "top_3": [
+      {
+        "rank": 1,
+        "ytid": "3Z74i_FWs3o",
+        "start_s": 110.0,
+        "end_s": 120.0,
+        "similarity": 0.46764132380485535,
+        "is_paired_clip": false
+      },
+      {
+        "rank": 2,
+        "ytid": "2f1UXGix_Cw",
+        "start_s": 30.0,
+        "end_s": 40.0,
+        "similarity": 0.4491414725780487,
+        "is_paired_clip": true
+      },
+      {
+        "rank": 3,
+        "ytid": "2vQTq4QLP8U",
+        "start_s": 100.0,
+        "end_s": 110.0,
+        "similarity": 0.44638729095458984,
+        "is_paired_clip": false
+      }
+    ]
+  }
+]
