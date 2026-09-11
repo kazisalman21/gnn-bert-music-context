@@ -2746,5 +2746,38 @@
       ]
     }
   },
+  "gtzan_pca_mlp": {
+    "accuracy": 0.11650485436893204,
+    "macro_f1": 0.12155370379479039,
+    "pca_components": 50,
+    "pca_explained_variance_ratio": 0.41661855578422546,
+    "mlp_layers": [
+      128,
+      64
+    ],
+    "train_samples": 797,
+    "test_samples": 103,
+    "feature_dim_original": 308
+  },
+  "graph_coherence": {
+    "gtzan": {
+      "mean_coherence": 0.012041666666666666,
+      "std_coherence": 0.04952340566170034,
+      "min_coherence": 0.0,
+      "max_coherence": 0.375,
+      "graphs_sampled": 200,
+      "total_graphs": 999,
+      "tau": 0.5
+    },
+    "mtat": {
+      "mean_coherence": 0.029904761904761906,
+      "std_coherence": 0.08704412830345792,
+      "min_coherence": 0.0,
+      "max_coherence": 0.42857142857142855,
+      "graphs_sampled": 200,
+      "total_graphs": 25860,
+      "tau": 0.5
+    }
+  },
   "note": "All prevalence estimates use training labels only; metrics use held-out test labels."
 }

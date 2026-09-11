@@ -156,6 +156,45 @@ def tune_threshold(y_true: np.ndarray, y_pred_probs: np.ndarray,
     return best_threshold
 
 
+def compute_graph_coherence(node_features: np.ndarray, edge_index: np.ndarray,
+                             tau: float = 0.5) -> float:
+    """Compute graph coherence score (faculty-spec §6, optional analysis).
+
+    Measures whether high-attention edges align with repeated patterns:
+        S_graph = (1/|E'|) Σ_{(i,j)∈E'} 𝟙[cos(h_i, h_j) > τ]
+    where E' excludes self-loops.
+
+    Args:
+        node_features: (num_nodes, feat_dim) array
+        edge_index: (2, num_edges) array
+        tau: cosine similarity threshold
+
+    Returns:
+        Coherence score in [0, 1]. Higher means edges connect similar nodes.
+    """
+    num_edges = edge_index.shape[1]
+    if num_edges == 0:
+        return 0.0
+
+    # Normalize features for cosine similarity
+    norms = np.linalg.norm(node_features, axis=1, keepdims=True)
+    norms = np.where(norms < 1e-8, 1.0, norms)
+    normalized = node_features / norms
+
+    coherent = 0
+    non_self = 0
+    for e in range(num_edges):
+        i, j = int(edge_index[0, e]), int(edge_index[1, e])
+        if i == j:  # skip self-loops
+            continue
+        non_self += 1
+        sim = float(np.dot(normalized[i], normalized[j]))
+        if sim > tau:
+            coherent += 1
+
+    return coherent / max(non_self, 1)
+
+
 def save_metrics(metrics: dict, path: str):
     """Save metrics dict to JSON file."""
     Path(path).parent.mkdir(parents=True, exist_ok=True)
